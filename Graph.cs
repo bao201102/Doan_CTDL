@@ -84,6 +84,7 @@ public class Graph
         System.Console.WriteLine(sPath[n].distance);
         System.Console.WriteLine("Tuyến đường phải đi là: ");
         PrintPath(0, n, sPath);
+        DisplayNearestPos(n, adjMat);
         DisplayCost(n);
 
         nTree = 0;
@@ -140,6 +141,43 @@ public class Graph
                 case 7: System.Console.Write("Đài truyền hình HTV"); break;
                 default: break;
             }
+        }
+    }
+    public void DisplayNearestPos(int currentpos, int[,] adjMat)
+    {
+        int min = infinity;
+        int nearestpos = 0;
+        for (int i = 1; i < adjMat.GetLength(1); i++)
+        {
+            if (adjMat[currentpos, i] < min && adjMat[currentpos, i] != 0)
+            {
+                min = adjMat[currentpos, i];
+                nearestpos = i;
+            }
+        }
+        System.Console.Write("\nĐịa điểm gần ");
+        switch (currentpos)
+        {
+            case 1: System.Console.Write("Đại học kinh tế TP.HCM CSB"); break;
+            case 2: System.Console.Write("Chợ Bến Thành"); break;
+            case 3: System.Console.Write("Bệnh viện Hùng Vương"); break;
+            case 4: System.Console.Write("Trường THPT Mạc Đĩnh Chi"); break;
+            case 5: System.Console.Write("Trung tâm mua sắm AEON Mall Bình Tân"); break;
+            case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
+            case 7: System.Console.Write("Đài truyền hình HTV"); break;
+            default: break;
+        }
+        System.Console.Write(" nhất là: ");
+        switch (nearestpos)
+        {
+            case 1: System.Console.Write("Đại học kinh tế TP.HCM CSB"); break;
+            case 2: System.Console.Write("Chợ Bến Thành"); break;
+            case 3: System.Console.Write("Bệnh viện Hùng Vương"); break;
+            case 4: System.Console.Write("Trường THPT Mạc Đĩnh Chi"); break;
+            case 5: System.Console.Write("Trung tâm mua sắm AEON Mall Bình Tân"); break;
+            case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
+            case 7: System.Console.Write("Đài truyền hình HTV"); break;
+            default: break;
         }
     }
 }

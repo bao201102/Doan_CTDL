@@ -1,4 +1,3 @@
-using System;
 public class DistOriginal
 {
     public int distance;
