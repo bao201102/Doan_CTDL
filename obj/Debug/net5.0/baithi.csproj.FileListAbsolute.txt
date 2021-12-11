@@ -1,0 +1,16 @@
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.exe
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.deps.json
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.runtimeconfig.json
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.runtimeconfig.dev.json
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.dll
+D:\Doan_CTDL\bin\Debug\net5.0\ref\baithi.dll
+D:\Doan_CTDL\bin\Debug\net5.0\baithi.pdb
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.csproj.AssemblyReference.cache
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.AssemblyInfoInputs.cache
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.AssemblyInfo.cs
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.csproj.CoreCompileInputs.cache
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.dll
+D:\Doan_CTDL\obj\Debug\net5.0\ref\baithi.dll
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.pdb
+D:\Doan_CTDL\obj\Debug\net5.0\baithi.genruntimeconfig.cache
