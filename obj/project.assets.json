@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\Dau\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Doan_CTDL\\baithi.csproj",
+      "projectUniqueName": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj",
       "projectName": "baithi",
-      "projectPath": "D:\\Doan_CTDL\\baithi.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Doan_CTDL\\obj\\",
+      "projectPath": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj",
+      "packagesPath": "C:\\Users\\Dau\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dau\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -107,7 +107,7 @@ namespace baithi
                     System.Console.WriteLine("Bạn đã thoát chương trình");
                     break;
                 default:
-                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 8)");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
                     goto Error2;
             }
         }
