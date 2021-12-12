@@ -145,19 +145,19 @@ namespace baithi
                     {
                         case 0:
                             float choLonCost = sPath[n].distance * listBus[busChoose].getPrice();
-                            float choLonTime = (sPath[n].distance / listBus[busChoose].getSpeed()) * 60;
+                            double choLonTime = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + choLonCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + choLonTime + " phút");
                             break;
                         case 1:
                             float quan8Cost = sPath[n].distance * listBus[busChoose].getPrice();
-                            float quan8Time = (sPath[n].distance / listBus[busChoose].getSpeed()) * 60;
+                            double quan8Time = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + quan8Cost + "đ");
                             System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + quan8Time + " phút");
                             break;
                         case 2:
                             float benThanhCost = sPath[n].distance * listBus[busChoose].getPrice();
-                            float benThanhTime = (sPath[n].distance / listBus[busChoose].getSpeed()) * 60;
+                            double benThanhTime = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + benThanhCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + benThanhTime + " phút");
                             break;
@@ -184,19 +184,19 @@ namespace baithi
                     {
                         case 0:
                             float grabCarCost = sPath[n].distance * listCar[carChoose].getPrice();
-                            float grabCarTime = (sPath[n].distance / listCar[carChoose].getSpeed()) * 60;
+                            double grabCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + grabCarCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + grabCarTime + " phút");
                             break;
                         case 1:
                             float uberCarCost = sPath[n].distance * listCar[carChoose].getPrice();
-                            float uberCarTime = (sPath[n].distance / listCar[carChoose].getSpeed()) * 60;
+                            double uberCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + uberCarCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + uberCarTime + " phút");
                             break;
                         case 2:
                             float maiLinhCarCost = sPath[n].distance * listCar[carChoose].getPrice();
-                            float maiLinhCarTime = (sPath[n].distance / listCar[carChoose].getSpeed()) * 60;
+                            double maiLinhCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + maiLinhCarCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + maiLinhCarTime + " phút");
                             break;
@@ -223,19 +223,19 @@ namespace baithi
                     {
                         case 0:
                             float grabMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
-                            float grabMotorbikeTime = (sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60;
+                            double grabMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + grabMotorbikeCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + grabMotorbikeTime + " phút");
                             break;
                         case 1:
                             float uberMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
-                            float uberMotorbikeTime = (sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60;
+                            double uberMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + uberMotorbikeCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + uberMotorbikeTime + " phút");
                             break;
                         case 2:
                             float beMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
-                            float beMotorbikeTime = (sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60;
+                            double beMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeTime + " phút");
                             break;
