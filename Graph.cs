@@ -103,7 +103,8 @@ public class Graph
         }
 
         //In thông tin
-        System.Console.WriteLine(sPath[n].distance);
+        System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
+        System.Console.WriteLine("Quãng đường ngắn nhất từ Bệnh viện Đại học Y dược đến {0} là: {1}", GetPosName(n), sPath[n].distance);
         System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
         PrintPath(0, n, sPath);
         DisplayNearestPos(n, adjMat);

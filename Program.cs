@@ -55,50 +55,36 @@ namespace baithi
                 case 1:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + ueh.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + ueh.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 2:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + chobenthanh.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + chobenthanh.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 3:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + bv_hungvuong.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + bv_hungvuong.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 4:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + macdinhchi.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + macdinhchi.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 5:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + aeon.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + aeon.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 6:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + khtn.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + khtn.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 7:
                     Console.Clear();
                     System.Console.WriteLine("Địa điểm bạn chọn là: " + htv.ToString());
-                    System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-                    System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + htv.getName() + " là: ");
                     map.Path(choose1);
                     break;
                 case 8:
@@ -108,7 +94,6 @@ namespace baithi
                     System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 8)");
                     goto Error1;
             }
-
 
             System.Console.WriteLine("\nBạn đã tham khảo các thông tin hữu ích về địa điểm trên xong!");
         Error2:
