@@ -123,6 +123,8 @@ namespace baithi
             System.Console.WriteLine("Xe buýt: Phím 1");
             System.Console.WriteLine("Xe taxi: Phím 2");
             System.Console.WriteLine("Xe máy: Phím 3");
+
+        Error:
             System.Console.Write("Nhập lựa chọn của bạn: ");
             int numberChoose = Int32.Parse(Console.ReadLine());
             switch (numberChoose)
@@ -139,6 +141,8 @@ namespace baithi
                     System.Console.WriteLine("Bến xe Chợ Lớn: Phím 0");
                     System.Console.WriteLine("Bến xe Quận 8: Phím 1");
                     System.Console.WriteLine("Bến xe Bến Thành: Phím 2");
+
+                Error1:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
                     int busChoose = Int32.Parse(Console.ReadLine());
                     switch (busChoose)
@@ -162,8 +166,8 @@ namespace baithi
                             System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + benThanhTime + " phút");
                             break;
                         default:
-                            System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
-                            break;
+                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
+                            goto Error1;
                     }
                     break;
                 case 2:
@@ -178,6 +182,8 @@ namespace baithi
                     System.Console.WriteLine("Grab: Phím 0");
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("Taxi Mai Linh: Phím 2");
+
+                Error2:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
                     int carChoose = Int32.Parse(Console.ReadLine());
                     switch (carChoose)
@@ -201,8 +207,8 @@ namespace baithi
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + maiLinhCarTime + " phút");
                             break;
                         default:
-                            System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
-                            break;
+                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
+                            goto Error2;
                     }
                     break;
                 case 3:
@@ -217,6 +223,8 @@ namespace baithi
                     System.Console.WriteLine("Grab: Phím 0");
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("BE: Phím 2");
+
+                Error3:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
                     int motorBikeChoose = Int32.Parse(Console.ReadLine());
                     switch (motorBikeChoose)
@@ -240,10 +248,13 @@ namespace baithi
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeTime + " phút");
                             break;
                         default:
-                            System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
-                            break;
+                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
+                            goto Error3;
                     }
                     break;
+                default:
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 3)");
+                    goto Error;
             }
 
         }
