@@ -63,20 +63,20 @@ public class Graph
     {
         switch (pos)
         {
-            case 1: 
-                return "Đại học kinh tế TP.HCM CSB"; 
+            case 1:
+                return "Đại học kinh tế TP.HCM CSB";
             case 2:
-                return "Chợ Bến Thành"; 
+                return "Chợ Bến Thành";
             case 3:
-                return "Bệnh viện Hùng Vương"; 
+                return "Bệnh viện Hùng Vương";
             case 4:
-                return "Trường THPT Mạc Đĩnh Chi"; 
+                return "Trường THPT Mạc Đĩnh Chi";
             case 5:
-                return "Trung tâm mua sắm AEON Mall Bình Tân"; 
+                return "Trung tâm mua sắm AEON Mall Bình Tân";
             case 6:
-                return "Đại học Khoa học tự nhiên TPHCM"; 
+                return "Đại học Khoa học tự nhiên TPHCM";
             case 7:
-                return "Đài truyền hình HTV"; 
+                return "Đài truyền hình HTV";
             default:
                 return "";
         }
