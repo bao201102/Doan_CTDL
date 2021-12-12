@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj": {}
+    "D:\\Doan_CTDL\\baithi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj": {
+    "D:\\Doan_CTDL\\baithi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj",
+        "projectUniqueName": "D:\\Doan_CTDL\\baithi.csproj",
         "projectName": "baithi",
-        "projectPath": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\baithi.csproj",
-        "packagesPath": "C:\\Users\\Dau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dau\\Documents\\GitHub\\Doan_CTDL\\obj\\",
+        "projectPath": "D:\\Doan_CTDL\\baithi.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\Doan_CTDL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
