@@ -46,3 +46,19 @@ C:\Users\Dau\Documents\GitHub\Doan_CTDL\obj\Debug\net5.0\baithi.dll
 C:\Users\Dau\Documents\GitHub\Doan_CTDL\obj\Debug\net5.0\ref\baithi.dll
 C:\Users\Dau\Documents\GitHub\Doan_CTDL\obj\Debug\net5.0\baithi.pdb
 C:\Users\Dau\Documents\GitHub\Doan_CTDL\obj\Debug\net5.0\baithi.genruntimeconfig.cache
+D:\New folder\bin\Debug\net5.0\baithi.exe
+D:\New folder\bin\Debug\net5.0\baithi.deps.json
+D:\New folder\bin\Debug\net5.0\baithi.runtimeconfig.json
+D:\New folder\bin\Debug\net5.0\baithi.runtimeconfig.dev.json
+D:\New folder\bin\Debug\net5.0\baithi.dll
+D:\New folder\bin\Debug\net5.0\ref\baithi.dll
+D:\New folder\bin\Debug\net5.0\baithi.pdb
+D:\New folder\obj\Debug\net5.0\baithi.csproj.AssemblyReference.cache
+D:\New folder\obj\Debug\net5.0\baithi.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\obj\Debug\net5.0\baithi.AssemblyInfoInputs.cache
+D:\New folder\obj\Debug\net5.0\baithi.AssemblyInfo.cs
+D:\New folder\obj\Debug\net5.0\baithi.csproj.CoreCompileInputs.cache
+D:\New folder\obj\Debug\net5.0\baithi.dll
+D:\New folder\obj\Debug\net5.0\ref\baithi.dll
+D:\New folder\obj\Debug\net5.0\baithi.pdb
+D:\New folder\obj\Debug\net5.0\baithi.genruntimeconfig.cache

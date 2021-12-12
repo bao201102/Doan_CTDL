@@ -110,6 +110,7 @@ namespace baithi
                     System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 8)");
                     goto Error2;
             }
+            //hello
         }
     }
 }
