@@ -29,9 +29,9 @@ namespace baithi
             vertexList[nVerts] = new Vertex(lab);
             nVerts++;
         }
-        public void AddEdge(int start, int theEnd, int weight)
+        public void AddEdge(int start, int end, int weight)
         {
-            adjMat[start, theEnd] = weight;
+            adjMat[start, end] = weight;
         }
         public int GetMin()
         {
@@ -122,8 +122,8 @@ namespace baithi
         public void DisplayCost(int n)
         {
             System.Console.WriteLine("\nCác loại phương tiện: ");
-            System.Console.WriteLine("Xe taxi: Phím 2");
-            System.Console.WriteLine("Xe máy: Phím 3");
+            System.Console.WriteLine("Xe taxi: Phím 1");
+            System.Console.WriteLine("Xe máy: Phím 2");
 
         Error:
             System.Console.Write("Nhập lựa chọn của bạn: ");
