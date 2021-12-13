@@ -122,7 +122,6 @@ namespace baithi
         public void DisplayCost(int n)
         {
             System.Console.WriteLine("\nCác loại phương tiện: ");
-            System.Console.WriteLine("Xe buýt: Phím 1");
             System.Console.WriteLine("Xe taxi: Phím 2");
             System.Console.WriteLine("Xe máy: Phím 3");
 
@@ -134,47 +133,6 @@ namespace baithi
             switch (numberChoose)
             {
                 case 1:
-                    List<Bus> listBus = new List<Bus>();
-                    Bus choLon = new Bus("01020", "Bến xe Chợ Lớn", 30f, 500f);
-                    listBus.Add(choLon);
-                    Bus quan8 = new Bus("03428", "Bến xe Quận 8", 40f, 1000f);
-                    listBus.Add(quan8);
-                    Bus benThanh = new Bus("02420", "Bến xe Bến Thành", 35f, 800f);
-                    listBus.Add(benThanh);
-                    System.Console.WriteLine("**********CÁC TUYẾN XE BUÝT********");
-                    System.Console.WriteLine("Bến xe Chợ Lớn: Phím 0");
-                    System.Console.WriteLine("Bến xe Quận 8: Phím 1");
-                    System.Console.WriteLine("Bến xe Bến Thành: Phím 2");
-
-                Error1:
-                    System.Console.Write("Nhập lựa chọn của bạn: ");
-                    int busChoose = Int32.Parse(Console.ReadLine());
-                    switch (busChoose)
-                    {
-                        case 0:
-                            float choLonCost = sPath[n].distance * listBus[busChoose].getPrice();
-                            double choLonTime = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
-                            System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + choLonCost + "đ");
-                            System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + choLonTime + " phút");
-                            break;
-                        case 1:
-                            float quan8Cost = sPath[n].distance * listBus[busChoose].getPrice();
-                            double quan8Time = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
-                            System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + quan8Cost + "đ");
-                            System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + quan8Time + " phút");
-                            break;
-                        case 2:
-                            float benThanhCost = sPath[n].distance * listBus[busChoose].getPrice();
-                            double benThanhTime = Math.Round((sPath[n].distance / listBus[busChoose].getSpeed()) * 60);
-                            System.Console.WriteLine("Tiền đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + benThanhCost + "đ");
-                            System.Console.WriteLine("Thời gian đi xe buýt của hãng " + listBus[busChoose].getName() + " là: " + benThanhTime + " phút");
-                            break;
-                        default:
-                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
-                            goto Error1;
-                    }
-                    break;
-                case 2:
                     List<Car> listCar = new List<Car>();
                     Car grabCar = new Car("13203", "Taxi Grab", 45f, 5000f);
                     listCar.Add(grabCar);
@@ -187,7 +145,7 @@ namespace baithi
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("Taxi Mai Linh: Phím 2");
 
-                Error2:
+                Error1:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
                     int carChoose = Int32.Parse(Console.ReadLine());
                     switch (carChoose)
@@ -212,10 +170,10 @@ namespace baithi
                             break;
                         default:
                             System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
-                            goto Error2;
+                            goto Error1;
                     }
                     break;
-                case 3:
+                case 2:
                     List<Motorbike> listMotorbike = new List<Motorbike>();
                     Motorbike grabMotorbike = new Motorbike("21023", "Xe máy Grab", 30f, 2500f);
                     listMotorbike.Add(grabMotorbike);
@@ -228,7 +186,7 @@ namespace baithi
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("BE: Phím 2");
 
-                Error3:
+                Error2:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
                     int motorBikeChoose = Int32.Parse(Console.ReadLine());
                     switch (motorBikeChoose)
@@ -253,11 +211,11 @@ namespace baithi
                             break;
                         default:
                             System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
-                            goto Error3;
+                            goto Error2;
                     }
                     break;
                 default:
-                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 3)");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
                     goto Error;
             }
 
