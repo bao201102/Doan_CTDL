@@ -311,17 +311,17 @@ namespace baithi
         public void BusPath(int n)
         {
             string[] str = new string[n];
-            for (int i=0;i<n;i++)
+            for (int i = 0; i < n; i++)
             {
-                str[i] = GetPosName(i+1);
+                str[i] = GetPosName(i + 1);
             }
             System.Console.WriteLine("Lộ trình xe buýt");
             System.Console.Write("Bệnh viện Đại học Y dược");
-            for (int i=0;i<n-1;i++)
+            for (int i = 0; i < n - 1; i++)
             {
-                System.Console.Write(" -> "+str[i]);
+                System.Console.Write(" -> " + str[i]);
             }
-            System.Console.Write(" -> "+str[n-1]);
+            System.Console.Write(" -> " + str[n - 1]);
         }
     }
 }
