@@ -121,7 +121,7 @@ namespace baithi
         }
         public void DisplayCost(int n)
         {
-            System.Console.WriteLine("\nCác loại phương tiện: ");
+            System.Console.WriteLine("\n------------Các loại phương tiện------------");
             System.Console.WriteLine("Xe taxi: Phím 1");
             System.Console.WriteLine("Xe máy: Phím 2");
 
@@ -140,7 +140,7 @@ namespace baithi
                     listCar.Add(uberCar);
                     Car maiLinhCar = new Car("14205", "Taxi Mai Linh", 50f, 5500f);
                     listCar.Add(maiLinhCar);
-                    System.Console.WriteLine("**********CÁC HÃNG XE TAXI CÔNG NGHỆ********");
+                    System.Console.WriteLine("------------CÁC HÃNG XE TAXI CÔNG NGHỆ------------");
                     System.Console.WriteLine("Grab: Phím 0");
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("Taxi Mai Linh: Phím 2");
@@ -181,7 +181,7 @@ namespace baithi
                     listMotorbike.Add(uberMotorbike);
                     Motorbike beMotorBike = new Motorbike("24306", "Xe máy BE", 29f, 2400f);
                     listMotorbike.Add(beMotorBike);
-                    System.Console.WriteLine("********CÁC HÃNG XE MÁY CÔNG NGHỆ*******");
+                    System.Console.WriteLine("------------CÁC HÃNG XE MÁY CÔNG NGHỆ------------");
                     System.Console.WriteLine("Grab: Phím 0");
                     System.Console.WriteLine("Uber: Phím 1");
                     System.Console.WriteLine("BE: Phím 2");

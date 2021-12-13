@@ -37,7 +37,7 @@ namespace baithi
             System.Console.WriteLine("\t\tĐỒ ÁN: CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT");
             System.Console.WriteLine("*****************************************************************");
             System.Console.WriteLine("Điểm xuất phát: Bệnh viện đại học Y Dược ");
-            System.Console.WriteLine("----------Các điểm đến------------");
+            System.Console.WriteLine("------------Các điểm đến------------");
             System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
             System.Console.WriteLine("Chợ Bến Thành: Phím 2");
             System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
