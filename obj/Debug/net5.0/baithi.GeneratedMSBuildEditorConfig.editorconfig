@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = baithi
+<<<<<<< HEAD
 build_property.ProjectDir = D:\Doan_CTDL\
+=======
+build_property.ProjectDir = C:\Users\Dau\Documents\GitHub\Doan_CTDL\
+>>>>>>> ee79c6cae5e4b394ce9cad33b69e013ceb51d14f
