@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pmzrH8le0g15lr6PvQrK0uFwd6QB5FKds5tA4K4WArIO+UZPJ37dOi24/b7C4wKb+z/y75YfwCRcJlQLk/lRQA==",
+  "dgSpecHash": "L1oAPvyUW7wStPGkxTXHrCVKcW9Eg8EWfb9rurVoWu9lr3LVQ56d0cN25576qF8oAc5c+LNVrTtLgmHuTQgPZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HOAN THIEN\\OneDrive\\Tài liệu\\GitHub\\Doan_CTDL\\baithi.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\HOAN THIEN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Doan_CTDL\\baithi.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
