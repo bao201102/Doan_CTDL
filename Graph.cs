@@ -129,6 +129,8 @@ namespace baithi
         Error:
             System.Console.Write("Nhập lựa chọn của bạn: ");
             int numberChoose = Int32.Parse(Console.ReadLine());
+            BusPath(n);
+            System.Console.WriteLine();
             switch (numberChoose)
             {
                 case 1:
@@ -305,6 +307,21 @@ namespace baithi
             {
                 System.Console.Write("\nĐịa điểm gần {0} nhất là: {1}", GetPosName(currentpos), GetPosName(nearestpos2));
             }
+        }
+        public void BusPath(int n)
+        {
+            string[] str = new string[n];
+            for (int i=0;i<n;i++)
+            {
+                str[i] = GetPosName(i+1);
+            }
+            System.Console.WriteLine("Lộ trình xe buýt");
+            System.Console.Write("Bệnh viện Đại học Y dược");
+            for (int i=0;i<n-1;i++)
+            {
+                System.Console.Write(" -> "+str[i]);
+            }
+            System.Console.Write(" -> "+str[n-1]);
         }
     }
 }
