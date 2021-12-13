@@ -66,6 +66,8 @@ namespace baithi
         {
             switch (pos)
             {
+                case 0:
+                    return "Bệnh viện Đại học Y dược";
                 case 1:
                     return "Đại học kinh tế TP.HCM CSB";
                 case 2:
@@ -279,7 +281,7 @@ namespace baithi
             int nearestpos1 = 0;
             int nearestpos2 = 0;
 
-            for (int i = 1; i < adjMat.GetLength(1); i++)
+            for (int i = 0; i < adjMat.GetLength(1); i++)
             {
                 if (adjMat[currentpos, i] < min1 && adjMat[currentpos, i] != 0)
                 {
@@ -287,7 +289,7 @@ namespace baithi
                     nearestpos1 = i;
                 }
             }
-            for (int i = 1; i < adjMat.GetLength(0); i++)
+            for (int i = 0; i < adjMat.GetLength(0); i++)
             {
                 if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
                 {
