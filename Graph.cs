@@ -62,7 +62,7 @@ namespace baithi
                     column++;
                 }
         }
-        public void Path(int n, int choosebegin)
+        public void Path(int n)
         {
             int startTree = 0;
             vertexList[startTree].isInTree = true;
@@ -84,10 +84,11 @@ namespace baithi
             }
 
             //In thông tin
-            System.Console.WriteLine(sPath[n].distance);
+            System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
+            System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName() , sPath[n].distance);
             System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
-            PrintPath(0, n, sPath, choosebegin);
-            //DisplayNearestPos(n, adjMat, choosebegin);
+            PrintPath(0, n, sPath);
+            DisplayNearestPos(n, adjMat);
             DisplayCost(n);
 
             nTree = 0;
@@ -194,284 +195,49 @@ namespace baithi
             }
 
         }
-        public void PrintPath(int start, int finish, DistOriginal[] back, int chooseBegin)
+        public void PrintPath(int start, int end, DistOriginal[] back)
         {
-            switch (chooseBegin)
+            if (start == end)
             {
-                case 0:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Bệnh viện Đại học Y dược");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 1:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Đại học kinh tế TP.HCM");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 2:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Chợ Bến Thành");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 3:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Bệnh viện Hùng Vương");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 4:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Trường THPT Mạc Đĩnh Chi");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 5:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Trung tâm mua sắm AEON Mall Bình Tân");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 6:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Đại học Khoa học tự nhiên TP.HCM");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
-                case 7:
-                    if (start == finish)
-                    {
-                        System.Console.Write("Đại truyền hình HTV");
-                    }
-                    else
-                    {
-                        PrintPath(start, back[finish].parentVert, back, chooseBegin);
-                        System.Console.Write(" -> ");
-                        System.Console.Write(vertexList[finish].label.getName());
-                    }
-                    break;
+                System.Console.Write(vertexList[start].label.getName());
+            }
+            else
+            {
+                PrintPath(start, back[end].parentVert, back);
+                System.Console.Write(" -> ");
+                System.Console.Write(vertexList[end].label.getName());
             }
         }
-        public void DisplayNearestPos(int currentpos, int[,] adjMat, int chooseBegin)
+        public void DisplayNearestPos(int currentpos, int[,] adjMat)
         {
-            int min = infinity;
-            int nearestpos = 0;
-            for (int i = 0; i < adjMat.GetLength(1); i++)
+            int min1 = infinity;
+            int min2 = infinity;
+            int nearestpos1 = 0;
+            int nearestpos2 = 0;
+
+            for (int i = 1; i < adjMat.GetLength(1); i++)
             {
-                if (adjMat[currentpos, i] < min && adjMat[currentpos, i] != 0)
+                if (adjMat[currentpos, i] < min1 && adjMat[currentpos, i] != 0)
                 {
-                    min = adjMat[currentpos, i];  
-                    nearestpos = i;
+                    min1 = adjMat[currentpos, i];
+                    nearestpos1 = i;
                 }
             }
-            for (int i = 0; i < adjMat.GetLength(1); i++)
+            for (int i = 1; i < adjMat.GetLength(0); i++)
             {
-                if (adjMat[currentpos, i] < min && adjMat[currentpos, i] != 0)
+                if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
                 {
-                    min = adjMat[currentpos, i];
-                    nearestpos = i;
+                    min2 = adjMat[i, currentpos];
+                    nearestpos2 = i;
                 }
             }
-            System.Console.Write("\nĐịa điểm gần ");
-            switch (chooseBegin)
+            if (min1 < min2)
             {
-                case 0:
-                    switch (currentpos)
-                    {
-                        case 0: System.Console.WriteLine("Bệnh viện đại học Y dược"); break;
-                        case 1: System.Console.Write("Đại học kinh tế TP.HCM CSB"); break;
-                        case 2: System.Console.Write("Chợ Bến Thành"); break;
-                        case 3: System.Console.Write("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.Write("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.Write("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                        default: break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.Write("Đại học kinh tế TP.HCM CSB"); break;
-                        case 2: System.Console.Write("Chợ Bến Thành"); break;
-                        case 3: System.Console.Write("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.Write("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.Write("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                        default: break;
-                    }
-                    break;
-                case 1:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 3: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 3: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
-                case 2:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 2: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 3: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 2: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 3: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
-                case 3:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 3: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 3: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
-                case 4:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 3: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 4: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện đại học Y Dược"); break;
-                        case 2: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 3: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 4: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 5: System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
-                case 5:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 2: System.Console.WriteLine("Bệnh viện đại học Y dược"); break;
-                        case 3: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    System.Console.Write(" nhất là: ");
-                    switch (nearestpos)
-                    {
-                        case 1: System.Console.WriteLine("Bệnh viện Hùng Vương"); break;
-                        case 2: System.Console.WriteLine("Bệnh viện đại học Y dược"); break;
-                        case 3: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
-                case 6:
-                    switch (currentpos)
-                    {
-                        case 1: System.Console.WriteLine("Đài truyền hình HTV"); break;
-                        case 2: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 3: System.Console.WriteLine("Đại học kinh tế TP.HCM"); break;
-                        case 4: System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi"); break;
-                        case 5: System.Console.WriteLine("Chợ Bến Thành"); break;
-                        case 6: System.Console.Write("Đại học Khoa học tự nhiên TPHCM"); break;
-                        case 7: System.Console.Write("Đài truyền hình HTV"); break;
-                    }
-                    break;
+                System.Console.Write("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
+            }
+            else
+            {
+                System.Console.Write("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
             }
         }
     }

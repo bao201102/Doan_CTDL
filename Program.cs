@@ -26,9 +26,9 @@ namespace baithi
             System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
             System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
             System.Console.Write("Nhập lựa chọn của bạn: ");
-            int chooseBegin = Int32.Parse(Console.ReadLine());
+            int start = Int32.Parse(Console.ReadLine());
 
-            switch (chooseBegin)
+            switch (start)
             {
                 case 0:
                     Graph map = new Graph();
@@ -58,43 +58,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose = Int32.Parse(Console.ReadLine());
-                    switch (choose)
+                    int end = Int32.Parse(Console.ReadLine());
+                    switch (end)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + ueh.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + aeon.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + khtn.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_daihoc.getName() + " đến " + htv.getName() + " là: ");
-                            map.Path(choose, chooseBegin);
+                            map.Path(end);
                             break;
                         default:
                             break;
@@ -129,43 +122,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose_1 = Int32.Parse(Console.ReadLine());
-                    switch (choose_1)
+                    int end1 = Int32.Parse(Console.ReadLine());
+                    switch (end1)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + aeon.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + khtn.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + ueh.getName() + " đến " + htv.getName() + " là: ");
-                            map1.Path(choose_1, chooseBegin);
+                            map1.Path(end1);
                             break;
                         default:
                             break;
@@ -196,43 +182,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose_2 = Int32.Parse(Console.ReadLine());
-                    switch (choose_2)
+                    int end2 = Int32.Parse(Console.ReadLine());
+                    switch (end2)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + ueh.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + aeon.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + khtn.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + chobenthanh.getName() + " đến " + htv.getName() + " là: ");
-                            map2.Path(choose_2, chooseBegin);
+                            map2.Path(end2);
                             break;
                         default:
                             break;
@@ -263,43 +242,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose3 = Int32.Parse(Console.ReadLine());
-                    switch (choose3)
+                    int end3 = Int32.Parse(Console.ReadLine());
+                    switch (end3)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + ueh.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + aeon.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + khtn.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + bv_hungvuong.getName() + " đến " + htv.getName() + " là: ");
-                            map3.Path(choose3, chooseBegin);
+                            map3.Path(end3);
                             break;
                         default:
                             break;
@@ -330,43 +302,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose4 = Int32.Parse(Console.ReadLine());
-                    switch (choose4)
+                    int end4 = Int32.Parse(Console.ReadLine());
+                    switch (end4)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + ueh.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + aeon.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + khtn.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + macdinhchi.getName() + " đến " + htv.getName() + " là: ");
-                            map4.Path(choose4, chooseBegin);
+                            map4.Path(end4);
                             break;
                         default:
                             break;
@@ -397,43 +362,36 @@ namespace baithi
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose5 = Int32.Parse(Console.ReadLine());
-                    switch (choose5)
+                    int end5 = Int32.Parse(Console.ReadLine());
+                    switch (end5)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + ueh.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + khtn.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + aeon.getName() + " đến " + htv.getName() + " là: ");
-                            map5.Path(choose5, chooseBegin);
+                            map5.Path(end5);
                             break;
                         default:
                             break;
@@ -464,43 +422,36 @@ namespace baithi
                     System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose6 = Int32.Parse(Console.ReadLine());
-                    switch (choose6)
+                    int end6 = Int32.Parse(Console.ReadLine());
+                    switch (end6)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + htv.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + ueh.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + aeon.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + khtn.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map6.Path(choose6, chooseBegin);
+                            map6.Path(end6);
                             break;
                         default:
                             break;
@@ -531,127 +482,42 @@ namespace baithi
                     System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
                     System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int choose7 = Int32.Parse(Console.ReadLine());
-                    switch (choose7)
+                    int end7 = Int32.Parse(Console.ReadLine());
+                    switch (end7)
                     {
                         case 1:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + khtn.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 2:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + chobenthanh.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 3:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + ueh.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 4:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + macdinhchi.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 5:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + aeon.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 6:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + bv_hungvuong.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         case 7:
                             System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            System.Console.Write("Quãng đường ngắn nhất từ " + htv.getName() + " đến " + bv_daihoc.getName() + " là: ");
-                            map7.Path(choose7, chooseBegin);
+                            map7.Path(end7);
                             break;
                         default:
                             break;
                     }
                     break;
-            }   
-        // Begin:
-        //     Console.Clear();
-        //     System.Console.WriteLine("\t\tĐỒ ÁN: CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT");
-        //     System.Console.WriteLine("*****************************************************************");
-        //     System.Console.WriteLine("Điểm xuất phát: Bệnh viện đại học Y Dược ");
-        //     System.Console.WriteLine("------------Các điểm đến------------");
-        //     System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
-        //     System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-        //     System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
-        //     System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-        //     System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-        //     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-        //     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
-        //     System.Console.WriteLine("*****************************************************************");
-
-        // Error1:
-        //     System.Console.Write("Chọn địa điểm cần đến (nhập 8 để thoát chương trình): ");
-        //     int choose1 = Int32.Parse(Console.ReadLine());
-        //     switch (choose1)
-        //     {
-        //         case 1:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + ueh.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 2:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + chobenthanh.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 3:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + bv_hungvuong.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 4:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + macdinhchi.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 5:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + aeon.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 6:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + khtn.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 7:
-        //             Console.Clear();
-        //             System.Console.WriteLine("Địa điểm bạn chọn là: " + htv.ToString());
-        //             map.Path(choose1);
-        //             break;
-        //         case 8:
-        //             System.Console.WriteLine("Bạn đã thoát chương trình");
-        //             break;
-        //         default:
-        //             System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 8)");
-        //             goto Error1;
-        //     }
-
-        //     System.Console.WriteLine("\nBạn đã tham khảo các thông tin hữu ích về địa điểm trên xong!");
-        // Error2:
-        //     System.Console.WriteLine("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
-        //     int choose2 = Int32.Parse(Console.ReadLine());
-        //     switch (choose2)
-        //     {
-        //         case 1:
-        //             goto Begin;
-        //         case 2:
-        //             System.Console.WriteLine("Bạn đã thoát chương trình");
-        //             break;
-        //         default:
-        //             System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
-        //             goto Error2;
-        //     }
+            }
         }
     }
 }
