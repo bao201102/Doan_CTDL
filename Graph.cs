@@ -86,6 +86,8 @@ namespace baithi
             for (int j = 0; j <= nVerts - 1; j++)
                 vertexList[j].isInTree = false;
         }
+
+        
         public void DisplayMenu(int n)
         {
             Console.Clear();
@@ -96,7 +98,7 @@ namespace baithi
             System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
             System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
             PrintPath(0, n, sPath);
-            DisplayNearestPos(n, adjMat);
+            //DisplayNearestPos(n, adjMat);
             DisplayCost(n);
         }
         public void DisplayCost(int n)

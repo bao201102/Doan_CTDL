@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace baithi
 {
@@ -18,9 +19,17 @@ namespace baithi
                 ChooseEnd(map);
             }
         }
+        static void FindByName(ref List<Map> listMap, string name) {
+            for(int i = 0 ; i < listMap.Count ; i++) {
+                if(listMap[i].getName().ToLower() == name) {
+                    System.Console.WriteLine("Thông tin về địa điểm bạn cần tìm là: " + listMap[i]);
+                }
+            }
+        }
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
             Map bv_daihoc = new Map(50, 20, "Bệnh viện Đại học Y dược", "02040", "Quận 5", "TP.HCM"); //0
             Map ueh = new Map(40, 53.2f, "Đại học kinh tế TP.HCM CSB", "02241", "Quận 10", "TP.HCM"); //1
             Map chobenthanh = new Map(82.4f, 20, "Chợ Bến Thành", "23459", "Quận 1", "TP.HCM"); //2
@@ -31,6 +40,18 @@ namespace baithi
             Map htv = new Map(20.4f, 30.2f, "Đài truyền hình HTV", "112394", "Quận 1", "TP.HCM"); //7
 
             Console.Clear();
+            // List<Map> mapList = new List<Map>();
+            
+            // mapList.Add(bv_daihoc); mapList.Add(ueh);
+            // mapList.Add(chobenthanh); mapList.Add(bv_hungvuong);
+            // mapList.Add(macdinhchi); mapList.Add(aeon);
+            // mapList.Add(khtn); mapList.Add(htv);
+            // System.Console.WriteLine(mapList[1].getName().ToLower());
+            // System.Console.Write("Nhập vào tên địa điểm bạn muốn tra thông tin: ");
+            // string name = Console.ReadLine();
+            // FindByName(ref mapList, name);
+
+            //Console.Clear();
             Graph mapNear = new Graph();
             mapNear.AddVertex(bv_daihoc);
             mapNear.AddVertex(ueh);
