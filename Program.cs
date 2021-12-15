@@ -19,9 +19,12 @@ namespace baithi
                 ChooseEnd(map);
             }
         }
-        static void FindByName(ref List<Map> listMap, string name) {
-            for(int i = 0 ; i < listMap.Count ; i++) {
-                if(listMap[i].getName().ToLower() == name) {
+        static void FindByName(ref List<Map> listMap, string name)
+        {
+            for (int i = 0; i < listMap.Count; i++)
+            {
+                if (listMap[i].getName().ToLower() == name)
+                {
                     System.Console.WriteLine("Thông tin về địa điểm bạn cần tìm là: " + listMap[i]);
                 }
             }
@@ -41,7 +44,7 @@ namespace baithi
 
             Console.Clear();
             // List<Map> mapList = new List<Map>();
-            
+
             // mapList.Add(bv_daihoc); mapList.Add(ueh);
             // mapList.Add(chobenthanh); mapList.Add(bv_hungvuong);
             // mapList.Add(macdinhchi); mapList.Add(aeon);
@@ -73,7 +76,7 @@ namespace baithi
             mapNear.FindNearestPos();
             System.Console.WriteLine();
 
-            Begin:
+        Begin:
             System.Console.WriteLine("-----------Các điểm xuất phát----------");
             System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 0");
             System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
@@ -84,7 +87,7 @@ namespace baithi
             System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
             System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
 
-            Error1:
+        Error1:
             System.Console.Write("Nhập lựa chọn của bạn: ");
             int start = Int32.Parse(Console.ReadLine());
             switch (start)
@@ -323,7 +326,7 @@ namespace baithi
 
                 default:
                     System.Console.WriteLine("\nYêu cầu bạn nhập không đúng. Chỉ nhập từ 1 - 7");
-                    goto Error1;    
+                    goto Error1;
             }
 
             System.Console.WriteLine("\nBạn đã tham khảo các thông tin hữu ích về lộ trình đường đi xong!");

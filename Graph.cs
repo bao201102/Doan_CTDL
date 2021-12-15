@@ -86,8 +86,6 @@ namespace baithi
             for (int j = 0; j <= nVerts - 1; j++)
                 vertexList[j].isInTree = false;
         }
-
-        
         public void DisplayMenu(int n)
         {
             Console.Clear();
@@ -98,7 +96,7 @@ namespace baithi
             System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
             System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
             PrintPath(0, n, sPath);
-            //DisplayNearestPos(n, adjMat);
+            DisplayNearestPos(n, adjMat);
             DisplayCost(n);
         }
         public void DisplayCost(int n)
@@ -214,8 +212,8 @@ namespace baithi
                 System.Console.Write(vertexList[end].label.getName());
             }
         }
-
-        public void FindNearestPos() {
+        public void FindNearestPos()
+        {
             System.Console.WriteLine("Nhập vào địa điểm hiện tại của bạn: ");
             System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 0");
             System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
@@ -229,8 +227,6 @@ namespace baithi
             int currPos = Int32.Parse(Console.ReadLine());
             DisplayNearestPos(currPos, adjMat);
         }
-
-
         public void DisplayNearestPos(int currentpos, int[,] adjMat)
         {
             int min1 = infinity;
@@ -238,7 +234,7 @@ namespace baithi
             int nearestpos1 = 0;
             int nearestpos2 = 0;
 
-            for (int i = 1; i < adjMat.GetLength(1); i++)
+            for (int i = 0; i < adjMat.GetLength(1); i++)
             {
                 if (adjMat[currentpos, i] < min1 && adjMat[currentpos, i] != 0)
                 {
@@ -246,7 +242,7 @@ namespace baithi
                     nearestpos1 = i;
                 }
             }
-            for (int i = 1; i < adjMat.GetLength(0); i++)
+            for (int i = 0; i < adjMat.GetLength(0); i++)
             {
                 if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
                 {
