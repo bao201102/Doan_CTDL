@@ -33,48 +33,48 @@ namespace baithi
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.InputEncoding = System.Text.Encoding.UTF8;
-            Map bv_daihoc = new Map(50, 20, "Bệnh viện Đại học Y dược", "02040", "Quận 5", "TP.HCM"); //0
-            Map ueh = new Map(40, 53.2f, "Đại học kinh tế TP.HCM CSB", "02241", "Quận 10", "TP.HCM"); //1
-            Map chobenthanh = new Map(82.4f, 20, "Chợ Bến Thành", "23459", "Quận 1", "TP.HCM"); //2
-            Map bv_hungvuong = new Map(50, 20, "Bệnh viện Hùng Vương", "22158", "Quận 5", "TP.HCM"); //3
-            Map macdinhchi = new Map(20, 30.5f, "Trường THPT Mạc Đĩnh Chi", "020104", "Quận 6", "TP.HCM"); //4
-            Map aeon = new Map(20.3f, 302.4f, "Trung tâm mua sắm AEON Mall Bình Tân", "132013", "Bình Tân", "TP.HCM"); //5
-            Map khtn = new Map(49.2f, 90.2f, "Đại học Khoa học tự nhiên TPHCM", "360709", "Quận 8", "TP.HCM"); //6
-            Map htv = new Map(20.4f, 30.2f, "Đài truyền hình HTV", "112394", "Quận 1", "TP.HCM"); //7
+            Map bv_daihoc = new Map(50, 20, "Bệnh viện Đại học Y dược", 0, "Quận 5", "TP.HCM"); //0
+            Map ueh = new Map(40, 53.2f, "Đại học kinh tế TP.HCM CSB", 1, "Quận 10", "TP.HCM"); //1
+            Map chobenthanh = new Map(82.4f, 20, "Chợ Bến Thành", 2, "Quận 1", "TP.HCM"); //2
+            Map bv_hungvuong = new Map(50, 20, "Bệnh viện Hùng Vương", 3, "Quận 5", "TP.HCM"); //3
+            Map macdinhchi = new Map(20, 30.5f, "Trường THPT Mạc Đĩnh Chi", 4, "Quận 6", "TP.HCM"); //4
+            Map aeon = new Map(20.3f, 302.4f, "Trung tâm mua sắm AEON Mall Bình Tân", 5, "Bình Tân", "TP.HCM"); //5
+            Map khtn = new Map(49.2f, 90.2f, "Đại học Khoa học tự nhiên TPHCM", 6, "Quận 8", "TP.HCM"); //6
+            Map htv = new Map(20.4f, 30.2f, "Đài truyền hình HTV", 7, "Quận 1", "TP.HCM"); //7
 
             Console.Clear();
-            // List<Map> mapList = new List<Map>();
+        // List<Map> mapList = new List<Map>();
 
-            // mapList.Add(bv_daihoc); mapList.Add(ueh);
-            // mapList.Add(chobenthanh); mapList.Add(bv_hungvuong);
-            // mapList.Add(macdinhchi); mapList.Add(aeon);
-            // mapList.Add(khtn); mapList.Add(htv);
-            // System.Console.WriteLine(mapList[1].getName().ToLower());
-            // System.Console.Write("Nhập vào tên địa điểm bạn muốn tra thông tin: ");
-            // string name = Console.ReadLine();
-            // FindByName(ref mapList, name);
+        // mapList.Add(bv_daihoc); mapList.Add(ueh);
+        // mapList.Add(chobenthanh); mapList.Add(bv_hungvuong);
+        // mapList.Add(macdinhchi); mapList.Add(aeon);
+        // mapList.Add(khtn); mapList.Add(htv);
+        // System.Console.WriteLine(mapList[1].getName().ToLower());
+        // System.Console.Write("Nhập vào tên địa điểm bạn muốn tra thông tin: ");
+        // string name = Console.ReadLine();
+        // FindByName(ref mapList, name);
 
-            //Console.Clear();
-            Graph mapNear = new Graph();
-            mapNear.AddVertex(bv_daihoc);
-            mapNear.AddVertex(ueh);
-            mapNear.AddVertex(chobenthanh);
-            mapNear.AddVertex(bv_hungvuong);
-            mapNear.AddVertex(macdinhchi);
-            mapNear.AddVertex(aeon);
-            mapNear.AddVertex(khtn);
-            mapNear.AddVertex(htv);
-            mapNear.AddEdge(0, 1, 2); mapNear.AddEdge(0, 3, 4); mapNear.AddEdge(0, 4, 2);
-            mapNear.AddEdge(1, 2, 6); mapNear.AddEdge(1, 4, 3); mapNear.AddEdge(1, 6, 4); mapNear.AddEdge(1, 0, 2);
-            mapNear.AddEdge(2, 5, 12); mapNear.AddEdge(2, 6, 7); mapNear.AddEdge(2, 7, 5); mapNear.AddEdge(2, 1, 6);
-            mapNear.AddEdge(3, 5, 3); mapNear.AddEdge(3, 6, 9); mapNear.AddEdge(3, 0, 4);
-            mapNear.AddEdge(4, 5, 1); mapNear.AddEdge(4, 7, 14); mapNear.AddEdge(4, 1, 3); mapNear.AddEdge(4, 0, 2);
-            mapNear.AddEdge(5, 6, 8); mapNear.AddEdge(5, 2, 12); mapNear.AddEdge(5, 3, 3); mapNear.AddEdge(5, 4, 1);
-            mapNear.AddEdge(6, 7, 4); mapNear.AddEdge(6, 1, 4); mapNear.AddEdge(6, 2, 7); mapNear.AddEdge(6, 3, 9); mapNear.AddEdge(6, 5, 8);
-            mapNear.AddEdge(7, 2, 5); mapNear.AddEdge(7, 4, 14); mapNear.AddEdge(7, 6, 4);
+        //Console.Clear();
+        //Graph mapNear = new Graph();
+        //mapNear.AddVertex(bv_daihoc);
+        //mapNear.AddVertex(ueh);
+        //mapNear.AddVertex(chobenthanh);
+        //mapNear.AddVertex(bv_hungvuong);
+        //mapNear.AddVertex(macdinhchi);
+        //mapNear.AddVertex(aeon);
+        //mapNear.AddVertex(khtn);
+        //mapNear.AddVertex(htv);
+        //mapNear.AddEdge(0, 1, 2); mapNear.AddEdge(0, 3, 4); mapNear.AddEdge(0, 4, 2);
+        //mapNear.AddEdge(1, 2, 6); mapNear.AddEdge(1, 4, 3); mapNear.AddEdge(1, 6, 4); mapNear.AddEdge(1, 0, 2);
+        //mapNear.AddEdge(2, 5, 12); mapNear.AddEdge(2, 6, 7); mapNear.AddEdge(2, 7, 5); mapNear.AddEdge(2, 1, 6);
+        //mapNear.AddEdge(3, 5, 3); mapNear.AddEdge(3, 6, 9); mapNear.AddEdge(3, 0, 4);
+        //mapNear.AddEdge(4, 5, 1); mapNear.AddEdge(4, 7, 14); mapNear.AddEdge(4, 1, 3); mapNear.AddEdge(4, 0, 2);
+        //mapNear.AddEdge(5, 6, 8); mapNear.AddEdge(5, 2, 12); mapNear.AddEdge(5, 3, 3); mapNear.AddEdge(5, 4, 1);
+        //mapNear.AddEdge(6, 7, 4); mapNear.AddEdge(6, 1, 4); mapNear.AddEdge(6, 2, 7); mapNear.AddEdge(6, 3, 9); mapNear.AddEdge(6, 5, 8);
+        //mapNear.AddEdge(7, 2, 5); mapNear.AddEdge(7, 4, 14); mapNear.AddEdge(7, 6, 4);
 
-            mapNear.FindNearestPos();
-            System.Console.WriteLine();
+        //mapNear.FindNearestPos();
+        //System.Console.WriteLine();
 
         Begin:
             System.Console.WriteLine("-----------Các điểm xuất phát----------");
@@ -112,15 +112,8 @@ namespace baithi
                     map.AddEdge(6, 7, 4); map.AddEdge(6, 1, 4); map.AddEdge(6, 2, 7); map.AddEdge(6, 3, 9); map.AddEdge(6, 5, 8);
                     map.AddEdge(7, 2, 5); map.AddEdge(7, 4, 14); map.AddEdge(7, 6, 4);
 
-                    System.Console.WriteLine("Điểm xuất phát:  " + bv_daihoc.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    System.Console.WriteLine("Điểm xuất phát: " + bv_daihoc.getName());
+                    map.PrintDes(start);
                     ChooseEnd(map);
                     break;
 
@@ -145,14 +138,7 @@ namespace baithi
                     map1.AddEdge(7, 2, 5); map1.AddEdge(7, 4, 14); map1.AddEdge(7, 6, 4);
 
                     System.Console.WriteLine("Điểm xuất phát: " + ueh.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 1");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    map1.PrintDes(start);
                     ChooseEnd(map1);
                     break;
 
@@ -173,14 +159,7 @@ namespace baithi
                     map2.AddEdge(7, 4, 14); map2.AddEdge(7, 6, 4); map2.AddEdge(7, 0, 5);
 
                     System.Console.WriteLine("Điểm xuất phát: " + chobenthanh.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
-                    System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 2");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    map2.PrintDes(start);
                     ChooseEnd(map2);
                     break;
 
@@ -201,14 +180,7 @@ namespace baithi
                     map3.AddEdge(7, 3, 4); map3.AddEdge(7, 4, 14); map3.AddEdge(7, 6, 4);
 
                     System.Console.WriteLine("Điểm xuất phát: " + bv_hungvuong.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 1");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 2");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    map3.PrintDes(start);
                     ChooseEnd(map3);
                     break;
 
@@ -229,14 +201,7 @@ namespace baithi
                     map4.AddEdge(7, 3, 5); map4.AddEdge(7, 6, 4); map4.AddEdge(7, 0, 14);
 
                     System.Console.WriteLine("Điểm xuất phát: " + macdinhchi.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 1");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 2");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 3");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    map4.PrintDes(start);
                     ChooseEnd(map4);
                     break;
 
@@ -257,14 +222,7 @@ namespace baithi
                     map5.AddEdge(7, 4, 14); map5.AddEdge(7, 5, 5); map5.AddEdge(7, 6, 4);
 
                     System.Console.WriteLine("Điểm xuất phát: " + aeon.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 1");
-                    System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 2");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 5");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+                    map5.PrintDes(start);
                     ChooseEnd(map5);
                     break;
 
@@ -285,14 +243,7 @@ namespace baithi
                     map6.AddEdge(7, 3, 2); map6.AddEdge(7, 4, 2); map6.AddEdge(7, 6, 4);
 
                     System.Console.WriteLine("Điểm xuất phát: " + khtn.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Đài truyền hình HTV: Phím 1");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 6");
-                    System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
+                    map6.PrintDes(start);
                     ChooseEnd(map6);
                     break;
 
@@ -313,14 +264,7 @@ namespace baithi
                     map7.AddEdge(7, 3, 2); map7.AddEdge(7, 4, 2); map7.AddEdge(7, 6, 4);
 
                     System.Console.WriteLine("Điểm xuất phát: " + htv.getName());
-                    System.Console.WriteLine("----------Các điểm đến------------");
-                    System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 1");
-                    System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-                    System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 3");
-                    System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-                    System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-                    System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 6");
-                    System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
+                    map7.PrintDes(start);
                     ChooseEnd(map7);
                     break;
 

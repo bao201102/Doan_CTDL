@@ -13,6 +13,7 @@ namespace baithi
         DistOriginal[] sPath;
         int currentVert;
         int startToCurrent;
+        Queue<Map> menu = new Queue<Map>();
 
         public Graph()
         {
@@ -27,7 +28,7 @@ namespace baithi
         public void AddVertex(Map lab)
         {
             vertexList[nVerts] = new Vertex(lab);
-            nVerts++;
+            menu.Enqueue(lab);
         }
         public void AddEdge(int start, int end, int weight)
         {
@@ -98,6 +99,20 @@ namespace baithi
             PrintPath(0, n, sPath);
             DisplayNearestPos(n, adjMat);
             DisplayCost(n);
+        }
+        public void PrintDes(int start)
+        {
+            System.Console.WriteLine("-----------Các điểm đến----------");
+            int button = 1;
+            while (menu.Count != 0)
+            {
+                if (start == menu.Peek().getId())
+                {
+                    menu.Dequeue();
+                }
+                System.Console.WriteLine("{0}: {1}", menu.Dequeue().getName(), button);
+                button++;
+            }
         }
         public void DisplayCost(int n)
         {
