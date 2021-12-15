@@ -29,6 +29,7 @@ namespace baithi
         {
             vertexList[nVerts] = new Vertex(lab);
             menu.Enqueue(lab);
+            nVerts++;
         }
         public void AddEdge(int start, int end, int weight)
         {
