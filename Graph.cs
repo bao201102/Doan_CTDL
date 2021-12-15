@@ -88,8 +88,10 @@ namespace baithi
         }
         public void DisplayMenu(int n)
         {
+            Console.Clear();
             Path();
-            System.Console.WriteLine("Nơi bạn muốn đến là: " + vertexList[n].label.getName());
+            System.Console.WriteLine("Điểm xuất phát: " + vertexList[0].label.getName());
+            System.Console.WriteLine("Điểm đến: " + vertexList[n].label.getName());
             System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
             System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
             System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
@@ -146,7 +148,7 @@ namespace baithi
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + maiLinhCarTime + " phút");
                             break;
                         default:
-                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
+                            System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
                             goto Error1;
                     }
                     break;
@@ -187,7 +189,7 @@ namespace baithi
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeTime + " phút");
                             break;
                         default:
-                            System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
+                            System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (0 - 2)");
                             goto Error2;
                     }
                     break;
