@@ -212,6 +212,23 @@ namespace baithi
                 System.Console.Write(vertexList[end].label.getName());
             }
         }
+
+        public void FindNearestPos() {
+            System.Console.WriteLine("Nhập vào địa điểm hiện tại của bạn: ");
+            System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 0");
+            System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
+            System.Console.WriteLine("Chợ Bến Thành: Phím 2");
+            System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
+            System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
+            System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
+            System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
+            System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
+            System.Console.Write("Nhập lựa chọn của bạn: ");
+            int currPos = Int32.Parse(Console.ReadLine());
+            DisplayNearestPos(currPos, adjMat);
+        }
+
+
         public void DisplayNearestPos(int currentpos, int[,] adjMat)
         {
             int min1 = infinity;

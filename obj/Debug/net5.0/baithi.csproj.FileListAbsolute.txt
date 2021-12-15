@@ -62,3 +62,19 @@ C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Doan_CTDL\obj\Debug\net5.0\bai
 C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Doan_CTDL\obj\Debug\net5.0\ref\baithi.dll
 C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Doan_CTDL\obj\Debug\net5.0\baithi.pdb
 C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Doan_CTDL\obj\Debug\net5.0\baithi.genruntimeconfig.cache
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.exe
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.deps.json
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.runtimeconfig.json
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.runtimeconfig.dev.json
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.dll
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\ref\baithi.dll
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\bin\Debug\net5.0\baithi.pdb
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.csproj.AssemblyReference.cache
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.GeneratedMSBuildEditorConfig.editorconfig
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.AssemblyInfoInputs.cache
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.AssemblyInfo.cs
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.csproj.CoreCompileInputs.cache
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.dll
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\ref\baithi.dll
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.pdb
+D:\cautrucdulieuvagiaithuat\Doan_CTDL\obj\Debug\net5.0\baithi.genruntimeconfig.cache

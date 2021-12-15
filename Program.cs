@@ -30,8 +30,29 @@ namespace baithi
             Map khtn = new Map(49.2f, 90.2f, "Đại học Khoa học tự nhiên TPHCM", "360709", "Quận 8", "TP.HCM"); //6
             Map htv = new Map(20.4f, 30.2f, "Đài truyền hình HTV", "112394", "Quận 1", "TP.HCM"); //7
 
-            Begin:
             Console.Clear();
+            Graph mapNear = new Graph();
+            mapNear.AddVertex(bv_daihoc);
+            mapNear.AddVertex(ueh);
+            mapNear.AddVertex(chobenthanh);
+            mapNear.AddVertex(bv_hungvuong);
+            mapNear.AddVertex(macdinhchi);
+            mapNear.AddVertex(aeon);
+            mapNear.AddVertex(khtn);
+            mapNear.AddVertex(htv);
+            mapNear.AddEdge(0, 1, 2); mapNear.AddEdge(0, 3, 4); mapNear.AddEdge(0, 4, 2);
+            mapNear.AddEdge(1, 2, 6); mapNear.AddEdge(1, 4, 3); mapNear.AddEdge(1, 6, 4); mapNear.AddEdge(1, 0, 2);
+            mapNear.AddEdge(2, 5, 12); mapNear.AddEdge(2, 6, 7); mapNear.AddEdge(2, 7, 5); mapNear.AddEdge(2, 1, 6);
+            mapNear.AddEdge(3, 5, 3); mapNear.AddEdge(3, 6, 9); mapNear.AddEdge(3, 0, 4);
+            mapNear.AddEdge(4, 5, 1); mapNear.AddEdge(4, 7, 14); mapNear.AddEdge(4, 1, 3); mapNear.AddEdge(4, 0, 2);
+            mapNear.AddEdge(5, 6, 8); mapNear.AddEdge(5, 2, 12); mapNear.AddEdge(5, 3, 3); mapNear.AddEdge(5, 4, 1);
+            mapNear.AddEdge(6, 7, 4); mapNear.AddEdge(6, 1, 4); mapNear.AddEdge(6, 2, 7); mapNear.AddEdge(6, 3, 9); mapNear.AddEdge(6, 5, 8);
+            mapNear.AddEdge(7, 2, 5); mapNear.AddEdge(7, 4, 14); mapNear.AddEdge(7, 6, 4);
+
+            mapNear.FindNearestPos();
+            System.Console.WriteLine();
+
+            Begin:
             System.Console.WriteLine("-----------Các điểm xuất phát----------");
             System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 0");
             System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
