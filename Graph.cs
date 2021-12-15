@@ -62,7 +62,7 @@ namespace baithi
                     column++;
                 }
         }
-        public void Path(int n)
+        public void Path()
         {
             int startTree = 0;
             vertexList[startTree].isInTree = true;
@@ -82,18 +82,20 @@ namespace baithi
                 nTree++;
                 AdjustShortPath();
             }
-
-            //In thông tin
+            nTree = 0;
+            for (int j = 0; j <= nVerts - 1; j++)
+                vertexList[j].isInTree = false;
+        }
+        public void DisplayMenu(int n)
+        {
+            Path();
+            System.Console.WriteLine("Nơi bạn muốn đến là: " + vertexList[n].label.getName());
             System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-            System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName() , sPath[n].distance);
+            System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
             System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
             PrintPath(0, n, sPath);
             DisplayNearestPos(n, adjMat);
             DisplayCost(n);
-
-            nTree = 0;
-            for (int j = 0; j <= nVerts - 1; j++)
-                vertexList[j].isInTree = false;
         }
         public void DisplayCost(int n)
         {

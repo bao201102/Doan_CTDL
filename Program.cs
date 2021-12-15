@@ -4,6 +4,20 @@ namespace baithi
 {
     class Program
     {
+        static void ChooseEnd(Graph map)
+        {
+            System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
+            int end = Int32.Parse(Console.ReadLine());
+            if (end >= 1 && end <= 7)
+            {
+                map.DisplayMenu(end);
+            }
+            else
+            {
+                Console.WriteLine("Yêu cầu bạn nhập không đúng. Chỉ nhập từ 1 - 7");
+                ChooseEnd(map);
+            }
+        }
         static void Main(string[] args)
         {
             Console.Clear();
@@ -60,42 +74,9 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end = Int32.Parse(Console.ReadLine());
-                    switch (end)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map.Path(end);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map.Path(end);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map.Path(end);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map.Path(end);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map.Path(end);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map.Path(end);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map.Path(end);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map);
                     break;
+
                 case 1:
                     Graph map1 = new Graph();
                     map1.AddVertex(ueh);
@@ -125,42 +106,9 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end1 = Int32.Parse(Console.ReadLine());
-                    switch (end1)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map1.Path(end1);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map1.Path(end1);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map1.Path(end1);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map1.Path(end1);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map1.Path(end1);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map1.Path(end1);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map1.Path(end1);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map1);
                     break;
+
                 case 2:
                     Graph map2 = new Graph();
                     map2.AddVertex(chobenthanh); map2.AddVertex(ueh);
@@ -186,42 +134,9 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end2 = Int32.Parse(Console.ReadLine());
-                    switch (end2)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map2.Path(end2);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map2.Path(end2);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map2.Path(end2);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map2.Path(end2);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map2.Path(end2);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map2.Path(end2);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map2.Path(end2);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map2);
                     break;
+
                 case 3:
                     Graph map3 = new Graph();
                     map3.AddVertex(bv_hungvuong); map3.AddVertex(bv_daihoc);
@@ -247,42 +162,9 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end3 = Int32.Parse(Console.ReadLine());
-                    switch (end3)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map3.Path(end3);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map3.Path(end3);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map3.Path(end3);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map3.Path(end3);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map3.Path(end3);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map3.Path(end3);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map3.Path(end3);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map3);
                     break;
+
                 case 4:
                     Graph map4 = new Graph();
                     map4.AddVertex(macdinhchi); map4.AddVertex(bv_daihoc);
@@ -308,41 +190,7 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end4 = Int32.Parse(Console.ReadLine());
-                    switch (end4)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map4.Path(end4);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map4.Path(end4);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map4.Path(end4);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map4.Path(end4);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map4.Path(end4);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map4.Path(end4);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map4.Path(end4);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map4);
                     break;
                 case 5:
                     Graph map5 = new Graph();
@@ -369,41 +217,7 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
                     System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end5 = Int32.Parse(Console.ReadLine());
-                    switch (end5)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map5.Path(end5);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map5.Path(end5);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map5.Path(end5);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map5.Path(end5);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map5.Path(end5);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map5.Path(end5);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map5.Path(end5);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map5);
                     break;
                 case 6:
                     Graph map6 = new Graph();
@@ -430,41 +244,7 @@ namespace baithi
                     System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 6");
                     System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end6 = Int32.Parse(Console.ReadLine());
-                    switch (end6)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + htv);
-                            map6.Path(end6);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map6.Path(end6);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map6.Path(end6);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map6.Path(end6);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map6.Path(end6);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map6.Path(end6);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map6.Path(end6);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map6);
                     break;
                 case 7:
                     Graph map7 = new Graph();
@@ -491,41 +271,7 @@ namespace baithi
                     System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 6");
                     System.Console.WriteLine("Bệnh viện đại học Y dược: Phím 7");
                     System.Console.WriteLine("*****************************************************************");
-                    System.Console.Write("Chọn địa điểm cần đến (gõ phím tương ứng trên menu): ");
-                    int end7 = Int32.Parse(Console.ReadLine());
-                    switch (end7)
-                    {
-                        case 1:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + khtn);
-                            map7.Path(end7);
-                            break;
-                        case 2:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + chobenthanh);
-                            map7.Path(end7);
-                            break;
-                        case 3:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + ueh);
-                            map7.Path(end7);
-                            break;
-                        case 4:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + macdinhchi);
-                            map7.Path(end7);
-                            break;
-                        case 5:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + aeon);
-                            map7.Path(end7);
-                            break;
-                        case 6:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_hungvuong);
-                            map7.Path(end7);
-                            break;
-                        case 7:
-                            System.Console.WriteLine("Nơi bạn muốn đến là: " + bv_daihoc);
-                            map7.Path(end7);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChooseEnd(map7);
                     break;
             }
         }
