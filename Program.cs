@@ -267,7 +267,7 @@ namespace baithi
             }
 
         Error2:
-            System.Console.Write("\nĐể tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
+            System.Console.WriteLine("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
             int end = Int32.Parse(Console.ReadLine());
             switch (end)
             {
