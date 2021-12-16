@@ -3,7 +3,7 @@ public class Map
     private float x;
     private float y;
     private string name;
-    private string id;
+    private int id;
     private string city;
     private string district;
     public float getX()
@@ -18,7 +18,7 @@ public class Map
     {
         return name;
     }
-    public string getId()
+    public int getId()
     {
         return id;
     }
@@ -30,7 +30,7 @@ public class Map
     {
         return district;
     }
-    public Map(float x, float y, string name, string id, string district, string city)
+    public Map(float x, float y, string name, int id, string district, string city)
     {
         this.x = x;
         this.y = y;
