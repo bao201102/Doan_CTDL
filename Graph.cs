@@ -15,7 +15,7 @@ namespace baithi
         int startToCurrent;
         Queue<Map> menu = new Queue<Map>();
 
-        public Graph()
+        public Graph()     //Cài đặt giá trị ban đầu
         {
             vertexList = new Vertex[max_verts];
             adjMat = new int[max_verts, max_verts];
@@ -25,17 +25,17 @@ namespace baithi
                     adjMat[j, k] = infinity;
             sPath = new DistOriginal[max_verts];
         }
-        public void AddVertex(Map lab)
+        public void AddVertex(Map lab)     
         {
             vertexList[nVerts] = new Vertex(lab);
             menu.Enqueue(lab);
             nVerts++;
         }
-        public void AddEdge(int start, int end, int weight)
+        public void AddEdge(int start, int end, int weight) 
         {
             adjMat[start, end] = weight;
         }
-        public int GetMin()
+        public int GetMin()    
         {
             int minDist = infinity;
             int indexMin = 0;
@@ -46,7 +46,7 @@ namespace baithi
                 }
             return indexMin;
         }
-        public void AdjustShortPath()
+        public void AdjustShortPath()     
         {
             int column = 1;
             while (column < nVerts)
@@ -69,6 +69,7 @@ namespace baithi
             int startTree = 0;
             vertexList[startTree].isInTree = true;
             nTree = 1;
+            
             for (int j = 0; j <= nVerts; j++)
             {
                 int tempDist = adjMat[startTree, j];
@@ -268,24 +269,24 @@ namespace baithi
                     switch (motorBikeChoose)
                     {
                         case 0:
-                            System.Console.Write("Tài xế Grab gần bạn nhất là: ");
-                            System.Console.WriteLine(random2.Next(0,1)+","+random2.Next(1,9)+"km");
+                            System.Console.Write("Tài xế Grab gần bạn nhất cách: ");
+                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
                             float grabMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double grabMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + grabMotorbikeCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + grabMotorbikeTime + " phút");
                             break;
                         case 1:
-                            System.Console.Write("Tài xế Uber gần bạn nhất là: ");
-                            System.Console.WriteLine(random2.Next(0,1)+","+random2.Next(1,9)+"km");
+                            System.Console.Write("Tài xế Uber gần bạn nhất cách: ");
+                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
                             float uberMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double uberMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + uberMotorbikeCost + "đ");
                             System.Console.WriteLine("Thời gian đi xe hơi của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + uberMotorbikeTime + " phút");
                             break;
                         case 2:
-                            System.Console.Write("Tài xế Be gần bạn nhất là: ");
-                            System.Console.WriteLine(random2.Next(0,1)+","+random2.Next(1,9)+"km");
+                            System.Console.Write("Tài xế Be gần bạn nhất cách: ");
+                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
                             float beMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double beMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeCost + "đ");
