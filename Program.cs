@@ -65,7 +65,7 @@ namespace baithi
                     break;
                 case 2:
                     Console.Clear();
-                    System.Console.WriteLine("-----------Các điểm xuất phát----------");
+                    System.Console.WriteLine("-----------Các địa điểm----------");
                     System.Console.WriteLine("Bệnh viện đại học Y Dược: 0");
                     System.Console.WriteLine("Đại học kinh tế TP.HCM: 1");
                     System.Console.WriteLine("Chợ Bến Thành: 2");

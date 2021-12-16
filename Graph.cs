@@ -176,7 +176,7 @@ namespace baithi
         public void PrintDes(int start)
         {
             Queue<Map> clone = new Queue<Map>(menu);
-            System.Console.WriteLine("-----------Các điểm đến----------");
+            System.Console.WriteLine("-----------Các địa điểm----------");
             int button = 1;
             while (clone.Count != 0)
             {
