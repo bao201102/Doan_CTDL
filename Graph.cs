@@ -25,17 +25,17 @@ namespace baithi
                     adjMat[j, k] = infinity;
             sPath = new DistOriginal[max_verts];
         }
-        public void AddVertex(Map lab)     
+        public void AddVertex(Map lab)     //Thêm đỉnh
         {
             vertexList[nVerts] = new Vertex(lab);
             menu.Enqueue(lab);
             nVerts++;
         }
-        public void AddEdge(int start, int end, int weight) 
+        public void AddEdge(int start, int end, int weight)     //Thêm cạnh
         {
             adjMat[start, end] = weight;
         }
-        public int GetMin()    
+        public int GetMin()    // Tìm vị trí gần với đỉnh cha nhất
         {
             int minDist = infinity;
             int indexMin = 0;
@@ -46,7 +46,7 @@ namespace baithi
                 }
             return indexMin;
         }
-        public void AdjustShortPath()     
+        public void AdjustShortPath()    //Thêm đường đi ngắn nhất từ vị trí hiện tại đến hết 
         {
             int column = 1;
             while (column < nVerts)
@@ -69,7 +69,7 @@ namespace baithi
             int startTree = 0;
             vertexList[startTree].isInTree = true;
             nTree = 1;
-            
+            // Lưu trọng số từ điểm bắt đầu tới tất cả vị trí
             for (int j = 0; j <= nVerts; j++)
             {
                 int tempDist = adjMat[startTree, j];
