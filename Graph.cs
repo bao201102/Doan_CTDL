@@ -90,34 +90,105 @@ namespace baithi
         }
         public void DisplayMenu(int n)
         {
+        Begin:
             Console.Clear();
             Path();
             System.Console.WriteLine("Điểm xuất phát: " + vertexList[0].label.getName());
             System.Console.WriteLine("Điểm đến: " + vertexList[n].label.getName());
-            System.Console.WriteLine("Những thông tin hữu ích về địa điểm bạn chọn để đi đến: ");
-            System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
-            System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
-            PrintPath(0, n, sPath);
-            DisplayNearestPos(n, adjMat);
-            DisplayCost(n);
+            System.Console.WriteLine("-----------Những thông tin hữu ích về lộ trình bạn cần biết-----------");
+            System.Console.WriteLine("Quãng đường ngắn nhất: 1");
+            System.Console.WriteLine("Tuyến đường ngắn nhất: 2");
+            System.Console.WriteLine("Tìm địa điểm gần nhất: 3");
+            System.Console.WriteLine("Tìm địa điểm xung quanh: 4");
+            System.Console.WriteLine("Hiển thị giá tiền theo phương tiện/hãng xe: 5");
+
+        Error:
+            System.Console.Write("Nhập lựa chọn của bạn: ");
+            int choose = int.Parse(Console.ReadLine());
+            switch (choose)
+            {
+                case 1:
+                    Console.Clear();
+                    System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
+                    break;
+                case 2:
+                    Console.Clear();
+                    System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
+                    PrintPath(0, n, sPath);
+                    break;
+                case 3:
+                    Console.Clear();
+                    PrintDes(0);
+                Error1:
+                    System.Console.Write("Nhập địa điểm bạn muốn: ");
+                    int pos1 = Int32.Parse(Console.ReadLine());
+                    if (pos1 >= 1 && pos1 <= 7)
+                    {
+                        DisplayNearestPos(pos1, adjMat);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 7)");
+                        goto Error1;
+                    }
+                    break;
+                case 4:
+                    Console.Clear();
+                    PrintDes(0);
+                Error2:
+                    System.Console.Write("Nhập địa điểm bạn muốn: ");
+                    int pos2 = Int32.Parse(Console.ReadLine());
+                    if (pos2 >= 1 && pos2 <= 7)
+                    {
+                        DisplayNearPos(pos2, adjMat);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 7)");
+                        goto Error2;
+                    }
+                    break;
+                case 5:
+                    Console.Clear();
+                    DisplayCost(n);
+                    break;
+                default:
+                    System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 5)");
+                    goto Error;
+            }           
+        Error3:
+            System.Console.WriteLine("\nĐể xem thêm thông tin về lộ trình ấn phím 1, để tiếp tục ấn phím 2:");
+            int exit = Int32.Parse(Console.ReadLine());
+            switch (exit)
+            {
+                case 1:
+                    goto Begin;
+                case 2:
+                    Console.Clear();
+                    break;
+                default:
+                    System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
+                    goto Error3;
+            }
         }
         public void PrintDes(int start)
         {
+            Queue<Map> clone = new Queue<Map>(menu);
             System.Console.WriteLine("-----------Các điểm đến----------");
             int button = 1;
-            while (menu.Count != 0)
+            while (clone.Count != 0)
             {
-                if (start == menu.Peek().getId())
+                if (start == clone.Peek().getId())
                 {
-                    menu.Dequeue();
+                    clone.Dequeue();
                 }
-                System.Console.WriteLine("{0}: {1}", menu.Dequeue().getName(), button);
+                System.Console.WriteLine("{0}: {1}", clone.Dequeue().getName(), button);
                 button++;
             }
         }
         public void DisplayCost(int n)
         {
-            System.Console.WriteLine("\n------------Các loại phương tiện------------");
+            System.Console.WriteLine("------------Các loại phương tiện------------");
             System.Console.WriteLine("Xe taxi: Phím 1");
             System.Console.WriteLine("Xe máy: Phím 2");
 
@@ -136,9 +207,9 @@ namespace baithi
                     Car maiLinhCar = new Car("14205", "Taxi Mai Linh", 50f, 5500f);
                     listCar.Add(maiLinhCar);
                     System.Console.WriteLine("------------CÁC HÃNG XE TAXI CÔNG NGHỆ------------");
-                    System.Console.WriteLine("Grab: Phím 0");
-                    System.Console.WriteLine("Uber: Phím 1");
-                    System.Console.WriteLine("Taxi Mai Linh: Phím 2");
+                    System.Console.WriteLine("Grab (5000đ/1km): 0");
+                    System.Console.WriteLine("Uber (4800đ/1km): 1");
+                    System.Console.WriteLine("Taxi Mai Linh (5500đ/1km): 2");
 
                 Error1:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
@@ -177,9 +248,9 @@ namespace baithi
                     Motorbike beMotorBike = new Motorbike("24306", "Xe máy BE", 29f, 2400f);
                     listMotorbike.Add(beMotorBike);
                     System.Console.WriteLine("------------CÁC HÃNG XE MÁY CÔNG NGHỆ------------");
-                    System.Console.WriteLine("Grab: Phím 0");
-                    System.Console.WriteLine("Uber: Phím 1");
-                    System.Console.WriteLine("BE: Phím 2");
+                    System.Console.WriteLine("Grab (2500đ/1km): Phím 0");
+                    System.Console.WriteLine("Uber (2600đ/1km): Phím 1");
+                    System.Console.WriteLine("BE (2400đ/1km): Phím 2");
 
                 Error2:
                     System.Console.Write("Nhập lựa chọn của bạn: ");
@@ -228,21 +299,6 @@ namespace baithi
                 System.Console.Write(vertexList[end].label.getName());
             }
         }
-        public void FindNearestPos()
-        {
-            System.Console.WriteLine("Nhập vào địa điểm hiện tại của bạn: ");
-            System.Console.WriteLine("Bệnh viện đại học Y Dược: Phím 0");
-            System.Console.WriteLine("Đại học kinh tế TP.HCM: Phím 1");
-            System.Console.WriteLine("Chợ Bến Thành: Phím 2");
-            System.Console.WriteLine("Bệnh viện Hùng Vương: Phím 3");
-            System.Console.WriteLine("Trường THPT Mạc Đĩnh Chi: Phím 4");
-            System.Console.WriteLine("Trung tâm mua sắm AEON Mall Bình Tân: Phím 5");
-            System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: Phím 6");
-            System.Console.WriteLine("Đài truyền hình HTV: Phím 7");
-            System.Console.Write("Nhập lựa chọn của bạn: ");
-            int currPos = Int32.Parse(Console.ReadLine());
-            DisplayNearestPos(currPos, adjMat);
-        }
         public void DisplayNearestPos(int currentpos, int[,] adjMat)
         {
             int min1 = infinity;
@@ -268,11 +324,22 @@ namespace baithi
             }
             if (min1 < min2)
             {
-                System.Console.Write("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
+                System.Console.WriteLine("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
             }
             else
             {
-                System.Console.Write("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
+                System.Console.WriteLine("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
+            }
+        }
+        public void DisplayNearPos(int currentpos, int[,] adjMat)
+        {
+            Console.WriteLine("Những địa điểm xung quanh {0} là: ", vertexList[currentpos].label.getName());
+            for (int i = 0; i < adjMat.GetLength(1); i++)
+            {
+                if (adjMat[currentpos, i] != 0 && adjMat[currentpos, i] < infinity)
+                {
+                    Console.WriteLine(vertexList[i].label.getName()) ;
+                }
             }
         }
     }
