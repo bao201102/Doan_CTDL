@@ -122,6 +122,7 @@ namespace baithi
                 Error1:
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos1 = Int32.Parse(Console.ReadLine());
+                    System.Console.WriteLine("------------------------------------");
                     if (pos1 >= 1 && pos1 <= 7)
                     {
                         DisplayNearestPos(pos1, adjMat);
@@ -138,6 +139,7 @@ namespace baithi
                 Error2:
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos2 = Int32.Parse(Console.ReadLine());
+                    System.Console.WriteLine("------------------------------------");
                     if (pos2 >= 1 && pos2 <= 7)
                     {
                         DisplayNearPos(pos2, adjMat);
@@ -324,11 +326,11 @@ namespace baithi
             }
             if (min1 < min2)
             {
-                System.Console.WriteLine("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
             }
             else
             {
-                System.Console.WriteLine("\nĐịa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
             }
         }
         public void DisplayNearPos(int currentpos, int[,] adjMat)

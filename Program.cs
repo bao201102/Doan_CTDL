@@ -53,6 +53,7 @@ namespace baithi
                 case 1:
                     Console.WriteLine("Nhập từ khóa cần tìm kiếm: ");
                     string text = Console.ReadLine();
+                    System.Console.WriteLine("------------------------------------");
                     Console.WriteLine("Địa điểm bạn cần tìm là: ");
                     for (int i = 0; i < mapList.Count; i++)
                     {
@@ -266,7 +267,7 @@ namespace baithi
             }
 
         Error2:
-            System.Console.WriteLine("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
+            System.Console.Write("\nĐể tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
             int end = Int32.Parse(Console.ReadLine());
             switch (end)
             {
