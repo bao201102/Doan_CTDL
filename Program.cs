@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace baithi
 {
-    class Program
+    public class Program
     {
         static void ChooseEnd(Graph map)
         {
@@ -34,38 +34,97 @@ namespace baithi
             Map khtn = new Map(49.2f, 90.2f, "Đại học Khoa học tự nhiên TPHCM", 6, "Quận 8", "TP.HCM"); //6
             Map htv = new Map(20.4f, 30.2f, "Đài truyền hình HTV", 7, "Quận 1", "TP.HCM"); //7
 
-            List<Map> mapList = new List<Map>();
-            mapList.Add(bv_daihoc); mapList.Add(ueh);
-            mapList.Add(chobenthanh); mapList.Add(bv_hungvuong);
-            mapList.Add(macdinhchi); mapList.Add(aeon);
-            mapList.Add(khtn); mapList.Add(htv);
+            List<Map> listpos = new List<Map>();
+            listpos.Add(bv_daihoc); listpos.Add(ueh);
+            listpos.Add(chobenthanh); listpos.Add(bv_hungvuong);
+            listpos.Add(macdinhchi); listpos.Add(aeon);
+            listpos.Add(khtn); listpos.Add(htv);
+
+            Graph mapnear = new Graph();
+            mapnear.AddVertex(bv_daihoc);
+            mapnear.AddVertex(ueh);
+            mapnear.AddVertex(chobenthanh);
+            mapnear.AddVertex(bv_hungvuong);
+            mapnear.AddVertex(macdinhchi);
+            mapnear.AddVertex(aeon);
+            mapnear.AddVertex(khtn);
+            mapnear.AddVertex(htv);
+            mapnear.AddEdge(0, 1, 2); mapnear.AddEdge(0, 3, 4); mapnear.AddEdge(0, 4, 2);
+            mapnear.AddEdge(1, 2, 6); mapnear.AddEdge(1, 4, 3); mapnear.AddEdge(1, 6, 4); mapnear.AddEdge(1, 0, 2);
+            mapnear.AddEdge(2, 5, 12); mapnear.AddEdge(2, 6, 7); mapnear.AddEdge(2, 7, 5); mapnear.AddEdge(2, 1, 6);
+            mapnear.AddEdge(3, 5, 3); mapnear.AddEdge(3, 6, 9); mapnear.AddEdge(3, 0, 4);
+            mapnear.AddEdge(4, 5, 1); mapnear.AddEdge(4, 7, 14); mapnear.AddEdge(4, 1, 3); mapnear.AddEdge(4, 0, 2);
+            mapnear.AddEdge(5, 6, 8); mapnear.AddEdge(5, 2, 12); mapnear.AddEdge(5, 3, 3); mapnear.AddEdge(5, 4, 1);
+            mapnear.AddEdge(6, 7, 4); mapnear.AddEdge(6, 1, 4); mapnear.AddEdge(6, 2, 7); mapnear.AddEdge(6, 3, 9); mapnear.AddEdge(6, 5, 8);
+            mapnear.AddEdge(7, 2, 5); mapnear.AddEdge(7, 4, 14); mapnear.AddEdge(7, 6, 4);
 
         Begin:
             Console.Clear();
             System.Console.WriteLine("-----------Phần mềm quản lý lộ trình đường đi----------");
             System.Console.WriteLine("Tìm địa điểm theo từ khóa: 1");
-            System.Console.WriteLine("Tìm thông tin theo lộ trình: 2");
+            System.Console.WriteLine("Tìm địa điểm gần nhất: 2");
+            System.Console.WriteLine("Tìm địa điểm xung quanh: 3");
+            System.Console.WriteLine("Tìm thông tin theo lộ trình: 4");
 
-            System.Console.Write("Nhập lựa chọn của bạn (ấn phím 0 để thoát): ");
+        Error1:
+            System.Console.Write("Nhập lựa chọn của bạn: ");
             int choose = int.Parse(Console.ReadLine());
             switch (choose)
             {
                 case 1:
-                    Console.WriteLine("Nhập từ khóa cần tìm kiếm: ");
+                    Console.Clear();
+                    Console.Write("Nhập từ khóa cần tìm kiếm: ");
                     string text = Console.ReadLine();
                     System.Console.WriteLine("------------------------------------");
                     Console.WriteLine("Địa điểm bạn cần tìm là: ");
-                    for (int i = 0; i < mapList.Count; i++)
+                    for (int i = 0; i < listpos.Count; i++)
                     {
-                        if (mapList[i].getName().ToLower().Contains(text.ToLower()))
+                        if (listpos[i].getName().ToLower().Contains(text.ToLower()))
                         {
-                            Console.WriteLine(mapList[i].getName());
+                            Console.WriteLine(listpos[i].getName());
                         }
                     }
                     break;
+
                 case 2:
                     Console.Clear();
-                    System.Console.WriteLine("-----------Các điểm xuất phát----------");
+                    mapnear.PrintDes(-1);
+                FError1:
+                    System.Console.Write("Nhập địa điểm bạn muốn: ");
+                    int pos1 = Int32.Parse(Console.ReadLine()) - 1;
+                    System.Console.WriteLine("------------------------------------");
+                    if (pos1 >= 0 && pos1 <= 7)
+                    {
+                        mapnear.DisplayNearestPos(pos1);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 8)");
+                        goto FError1;
+                    }
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    mapnear.PrintDes(-1);
+                FError2:
+                    System.Console.Write("Nhập địa điểm bạn muốn: ");
+                    int pos2 = Int32.Parse(Console.ReadLine()) - 1;
+                    System.Console.WriteLine("------------------------------------");
+                    if (pos2 >= 0 && pos2 <= 7)
+                    {
+                        mapnear.DisplayNearPos(pos2);
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 7)");
+                        goto FError2;
+                    }
+                    break;
+
+                case 4:
+                    Console.Clear();
+                    System.Console.WriteLine("-----------Các địa điểm----------");
                     System.Console.WriteLine("Bệnh viện đại học Y Dược: 0");
                     System.Console.WriteLine("Đại học kinh tế TP.HCM: 1");
                     System.Console.WriteLine("Chợ Bến Thành: 2");
@@ -75,34 +134,16 @@ namespace baithi
                     System.Console.WriteLine("Đại học Khoa học tự nhiên TPHCM: 6");
                     System.Console.WriteLine("Đài truyền hình HTV: 7");
 
-                Error1:
+                FError3:
                     System.Console.Write("Chọn địa điểm xuất phát: ");
                     int start = Int32.Parse(Console.ReadLine());
                     switch (start)
                     {
                         case 0:
                             Console.Clear();
-                            Graph map = new Graph();
-                            map.AddVertex(bv_daihoc);
-                            map.AddVertex(ueh);
-                            map.AddVertex(chobenthanh);
-                            map.AddVertex(bv_hungvuong);
-                            map.AddVertex(macdinhchi);
-                            map.AddVertex(aeon);
-                            map.AddVertex(khtn);
-                            map.AddVertex(htv);
-                            map.AddEdge(0, 1, 2); map.AddEdge(0, 3, 4); map.AddEdge(0, 4, 2);
-                            map.AddEdge(1, 2, 6); map.AddEdge(1, 4, 3); map.AddEdge(1, 6, 4); map.AddEdge(1, 0, 2);
-                            map.AddEdge(2, 5, 12); map.AddEdge(2, 6, 7); map.AddEdge(2, 7, 5); map.AddEdge(2, 1, 6);
-                            map.AddEdge(3, 5, 3); map.AddEdge(3, 6, 9); map.AddEdge(3, 0, 4);
-                            map.AddEdge(4, 5, 1); map.AddEdge(4, 7, 14); map.AddEdge(4, 1, 3); map.AddEdge(4, 0, 2);
-                            map.AddEdge(5, 6, 8); map.AddEdge(5, 2, 12); map.AddEdge(5, 3, 3); map.AddEdge(5, 4, 1);
-                            map.AddEdge(6, 7, 4); map.AddEdge(6, 1, 4); map.AddEdge(6, 2, 7); map.AddEdge(6, 3, 9); map.AddEdge(6, 5, 8);
-                            map.AddEdge(7, 2, 5); map.AddEdge(7, 4, 14); map.AddEdge(7, 6, 4);
-
                             System.Console.WriteLine("Điểm xuất phát: " + bv_daihoc.getName());
-                            map.PrintDes(start);
-                            ChooseEnd(map);
+                            mapnear.PrintDes(start);
+                            ChooseEnd(mapnear);
                             break;
 
                         case 1:
@@ -257,28 +298,33 @@ namespace baithi
                             break;
 
                         default:
-                            System.Console.WriteLine("\nYêu cầu bạn nhập không đúng. Chỉ nhập từ 1 - 7");
-                            goto Error1;
+                            System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 7)");
+                            goto FError3;
                     }
                     break;
+
                 default:
-                    Console.WriteLine("Bạn đã thoát chương trình");
-                    break;
+                    System.Console.WriteLine("------------------------------------");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 4)");
+                    goto Error1;
             }
 
         Error2:
-            System.Console.Write("\nĐể tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
+            System.Console.Write("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2: ");
             int end = Int32.Parse(Console.ReadLine());
             switch (end)
             {
                 case 1:
                     goto Begin;
+
                 case 2:
                     Console.Clear();
                     System.Console.WriteLine("Bạn đã thoát chương trình");
                     break;
+
                 default:
-                    System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
+                    System.Console.WriteLine("------------------------------------");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
                     goto Error2;
             }
         }
