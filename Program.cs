@@ -73,7 +73,7 @@ namespace baithi
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine("Nhập từ khóa cần tìm kiếm: ");
+                    Console.Write("Nhập từ khóa cần tìm kiếm: ");
                     string text = Console.ReadLine();
                     System.Console.WriteLine("------------------------------------");
                     Console.WriteLine("Địa điểm bạn cần tìm là: ");
@@ -93,7 +93,7 @@ namespace baithi
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos1 = Int32.Parse(Console.ReadLine()) - 1;
                     System.Console.WriteLine("------------------------------------");
-                    if (pos1 >= 1 && pos1 <= 8)
+                    if (pos1 >= 0 && pos1 <= 7)
                     {
                         mapnear.DisplayNearestPos(pos1);
                     }
@@ -111,7 +111,7 @@ namespace baithi
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos2 = Int32.Parse(Console.ReadLine()) - 1;
                     System.Console.WriteLine("------------------------------------");
-                    if (pos2 >= 1 && pos2 <= 7)
+                    if (pos2 >= 0 && pos2 <= 7)
                     {
                         mapnear.DisplayNearPos(pos2);
                     }
@@ -141,27 +141,9 @@ namespace baithi
                     {
                         case 0:
                             Console.Clear();
-                            Graph map = new Graph();
-                            map.AddVertex(bv_daihoc);
-                            map.AddVertex(ueh);
-                            map.AddVertex(chobenthanh);
-                            map.AddVertex(bv_hungvuong);
-                            map.AddVertex(macdinhchi);
-                            map.AddVertex(aeon);
-                            map.AddVertex(khtn);
-                            map.AddVertex(htv);
-                            map.AddEdge(0, 1, 2); map.AddEdge(0, 3, 4); map.AddEdge(0, 4, 2);
-                            map.AddEdge(1, 2, 6); map.AddEdge(1, 4, 3); map.AddEdge(1, 6, 4); map.AddEdge(1, 0, 2);
-                            map.AddEdge(2, 5, 12); map.AddEdge(2, 6, 7); map.AddEdge(2, 7, 5); map.AddEdge(2, 1, 6);
-                            map.AddEdge(3, 5, 3); map.AddEdge(3, 6, 9); map.AddEdge(3, 0, 4);
-                            map.AddEdge(4, 5, 1); map.AddEdge(4, 7, 14); map.AddEdge(4, 1, 3); map.AddEdge(4, 0, 2);
-                            map.AddEdge(5, 6, 8); map.AddEdge(5, 2, 12); map.AddEdge(5, 3, 3); map.AddEdge(5, 4, 1);
-                            map.AddEdge(6, 7, 4); map.AddEdge(6, 1, 4); map.AddEdge(6, 2, 7); map.AddEdge(6, 3, 9); map.AddEdge(6, 5, 8);
-                            map.AddEdge(7, 2, 5); map.AddEdge(7, 4, 14); map.AddEdge(7, 6, 4);
-
                             System.Console.WriteLine("Điểm xuất phát: " + bv_daihoc.getName());
-                            map.PrintDes(start);
-                            ChooseEnd(map);
+                            mapnear.PrintDes(start);
+                            ChooseEnd(mapnear);
                             break;
 
                         case 1:
@@ -328,7 +310,7 @@ namespace baithi
             }
 
         Error2:
-            System.Console.WriteLine("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2:");
+            System.Console.Write("Để tiếp tục sử dụng chương trình ấn phím 1, để thoát chương trình ấn phím 2: ");
             int end = Int32.Parse(Console.ReadLine());
             switch (end)
             {

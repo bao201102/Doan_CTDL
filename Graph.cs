@@ -123,11 +123,11 @@ namespace baithi
                     break;
 
                 default:
-                    System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 5)");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 5)");
                     goto Error1;
             }           
         Error2:
-            System.Console.WriteLine("Để xem thêm thông tin về lộ trình ấn phím 1, để tiếp tục ấn phím 2:");
+            System.Console.Write("Để xem thêm thông tin về lộ trình ấn phím 1, để tiếp tục ấn phím 2: ");
             int exit = Int32.Parse(Console.ReadLine());
             switch (exit)
             {
@@ -137,7 +137,7 @@ namespace baithi
                     Console.Clear();
                     break;
                 default:
-                    System.Console.WriteLine("\nYêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
+                    System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 2)");
                     goto Error2;
             }
         }
