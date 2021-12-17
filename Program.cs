@@ -60,11 +60,25 @@ namespace baithi
 
         Begin:
             Console.Clear();
-            System.Console.WriteLine("-----------Phần mềm quản lý lộ trình đường đi----------");
-            System.Console.WriteLine("Tìm địa điểm theo từ khóa: 1");
-            System.Console.WriteLine("Tìm địa điểm gần nhất: 2");
-            System.Console.WriteLine("Tìm địa điểm xung quanh: 3");
-            System.Console.WriteLine("Tìm thông tin theo lộ trình: 4");
+            System.Console.WriteLine("=========ĐỒ ÁN MÔN HỌC CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT=========");
+            System.Console.WriteLine("  ĐỀ TÀI: ĐỒ THỊ VÀ ỨNG DỤNG TRONG QUẢN LÍ LỘ TRÌNH ĐƯỜNG ĐI  ");
+            System.Console.WriteLine("           NHÓM THỰC HIỆN: BẢO, DẬU, ĐẠT, THIỆN");
+            System.Console.WriteLine("                 ************************                     ");
+            System.Console.WriteLine("---------------PHẦN MỀM QUẢN LÍ LỘ TRÌNH ĐƯỜNG ĐI-------------");
+            System.Console.WriteLine("____________________Các địa điểm trên bản đồ__________________");
+            System.Console.WriteLine("1. Bệnh viện đại học Y Dược");
+            System.Console.WriteLine("2. Trường đại học Kinh tế TP.HCM");
+            System.Console.WriteLine("3. Chợ Bến Thành");
+            System.Console.WriteLine("4. Bệnh viện Hùng Vương");
+            System.Console.WriteLine("5. Trường THPT Mạc Đĩnh Chi");
+            System.Console.WriteLine("6. Trung tâm mua sắm AEON Mall Bình Tân");
+            System.Console.WriteLine("7. Đại học Khoa học tự nhiên TP.HCM");
+            System.Console.WriteLine("8. Đài truyền HTV");
+            System.Console.WriteLine("==============================================================");
+            System.Console.WriteLine("Tìm địa điểm theo từ khóa: Phím 1");
+            System.Console.WriteLine("Tìm địa điểm gần nhất: Phím 2");
+            System.Console.WriteLine("Tìm địa điểm xung quanh: Phím 3");
+            System.Console.WriteLine("Tìm thông tin theo lộ trình: Phím 4");
 
         Error1:
             System.Console.Write("Nhập lựa chọn của bạn: ");
