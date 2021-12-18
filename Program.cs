@@ -26,22 +26,22 @@ namespace baithi
             listpos.Add(macdinhchi); listpos.Add(aeon);
             listpos.Add(khtn); listpos.Add(htv);
 
-            Graph mapnear = new Graph();
-            mapnear.AddVertex(bv_daihoc);
-            mapnear.AddVertex(ueh);
-            mapnear.AddVertex(chobenthanh);
-            mapnear.AddVertex(bv_hungvuong);
-            mapnear.AddVertex(macdinhchi);
-            mapnear.AddVertex(aeon);
-            mapnear.AddVertex(khtn);
-            mapnear.AddVertex(htv);
-            mapnear.AddEdge(0, 1, 2); mapnear.AddEdge(0, 3, 4); mapnear.AddEdge(0, 4, 2);
-            mapnear.AddEdge(1, 2, 6); mapnear.AddEdge(1, 4, 3); mapnear.AddEdge(1, 6, 4); 
-            mapnear.AddEdge(2, 5, 12); mapnear.AddEdge(2, 6, 7); mapnear.AddEdge(2, 7, 5);
-            mapnear.AddEdge(3, 5, 3); mapnear.AddEdge(3, 6, 9); 
-            mapnear.AddEdge(4, 5, 1); mapnear.AddEdge(4, 7, 14); 
-            mapnear.AddEdge(5, 6, 8); 
-            mapnear.AddEdge(6, 7, 4);
+            Graph map = new Graph();
+            map.AddVertex(bv_daihoc);
+            map.AddVertex(ueh);
+            map.AddVertex(chobenthanh);
+            map.AddVertex(bv_hungvuong);
+            map.AddVertex(macdinhchi);
+            map.AddVertex(aeon);
+            map.AddVertex(khtn);
+            map.AddVertex(htv);
+            map.AddEdge(0, 1, 2); map.AddEdge(0, 3, 4); map.AddEdge(0, 4, 2);
+            map.AddEdge(1, 2, 6); map.AddEdge(1, 4, 3); map.AddEdge(1, 6, 4); 
+            map.AddEdge(2, 5, 12); map.AddEdge(2, 6, 7); map.AddEdge(2, 7, 5);
+            map.AddEdge(3, 5, 3); map.AddEdge(3, 6, 9); 
+            map.AddEdge(4, 5, 1); map.AddEdge(4, 7, 14); 
+            map.AddEdge(5, 6, 8); 
+            map.AddEdge(6, 7, 4);
 
         Begin:
             Console.Clear();
@@ -87,14 +87,14 @@ namespace baithi
 
                 case 2:
                     Console.Clear();
-                    mapnear.PrintDes(-1);
+                    map.PrintDes(-1);
                 FError1:
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos1 = Int32.Parse(Console.ReadLine()) - 1;
                     System.Console.WriteLine("------------------------------------");
                     if (pos1 >= 0 && pos1 <= 7)
                     {
-                        mapnear.DisplayNearestPos(pos1);
+                        map.DisplayNearestPos(pos1);
                     }
                     else
                     {
@@ -105,14 +105,14 @@ namespace baithi
 
                 case 3:
                     Console.Clear();
-                    mapnear.PrintDes(-1);
+                    map.PrintDes(-1);
                 FError2:
                     System.Console.Write("Nhập địa điểm bạn muốn: ");
                     int pos2 = Int32.Parse(Console.ReadLine()) - 1;
                     System.Console.WriteLine("------------------------------------");
                     if (pos2 >= 0 && pos2 <= 7)
                     {
-                        mapnear.DisplayNearPos(pos2);
+                        map.DisplayNearPos(pos2);
                     }
                     else
                     {
@@ -122,13 +122,11 @@ namespace baithi
                     break;
 
                 case 4:
-
-                //FError3:
                     System.Console.Write("Nhập địa điểm xuất phát: ");
                     string startPos = Console.ReadLine();
                     System.Console.Write("Nhập điểm đến: ");
                     string endPos = Console.ReadLine();
-                    mapnear.DisplayMenu(startPos, endPos);
+                    map.DisplayMenu(startPos, endPos);
                     break;
 
                 default:

@@ -67,8 +67,8 @@ namespace baithi
         }
         public void Path(string startPos, string endPos)
         {
-            int start = desNumber(startPos);
-            int end = desNumber(endPos);
+            int start = DesNumber(startPos);
+            int end = DesNumber(endPos);
             int startTree = start;
             vertexList[startTree].isInTree = true;
             nTree = 1;
@@ -96,11 +96,11 @@ namespace baithi
         {
         Begin:
             Console.Clear();
-            int m = desNumber(startPos);
-            int n = desNumber(endPos);
+            int m = DesNumber(startPos);
+            int n = DesNumber(endPos);
             Path(startPos, endPos);
-            System.Console.WriteLine("Điểm xuất phát: " + desName(startPos));
-            System.Console.WriteLine("Điểm đến: " + desName(endPos));
+            System.Console.WriteLine("Điểm xuất phát: " + DesName(startPos));
+            System.Console.WriteLine("Điểm đến: " + DesName(endPos));
             System.Console.WriteLine("-----------Những thông tin hữu ích về lộ trình bạn cần biết-----------");
             System.Console.WriteLine("Quãng đường ngắn nhất: 1");
             System.Console.WriteLine("Tuyến đường ngắn nhất: 2");
@@ -296,35 +296,23 @@ namespace baithi
         }
         public void DisplayNearestPos(int currentpos)
         {
-            int min1 = infinity;
-            int min2 = infinity;
-            int nearestpos1 = 0;
-            int nearestpos2 = 0;
+            int min = infinity;
+            int nearestpos = 0;
 
+            System.Console.WriteLine("Địa điểm gần {0} nhất là: ", vertexList[currentpos].label.getName());
             for (int i = 0; i < adjMat.GetLength(1); i++)
             {
-                if (adjMat[currentpos, i] < min1 && adjMat[currentpos, i] != 0)
+                if (adjMat[currentpos, i] == min && adjMat[currentpos, i] != infinity)
                 {
-                    min1 = adjMat[currentpos, i];
-                    nearestpos1 = i;
+                    System.Console.WriteLine(vertexList[nearestpos].label.getName());
+                }
+                if (adjMat[currentpos, i] <= min && adjMat[currentpos, i] != 0)
+                {
+                    min = adjMat[currentpos, i];
+                    nearestpos = i;
                 }
             }
-            for (int i = adjMat.GetLength(1) - 1; i >= 0; i--)
-            {
-                if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
-                {
-                    min2 = adjMat[i, currentpos];
-                    nearestpos2 = i;
-                }
-            }
-            if (min1 - min2 == 0)
-            {
-                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}, {2}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName(), vertexList[nearestpos2].label.getName());
-            }
-            else
-            {
-                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
-            }
+            System.Console.WriteLine(vertexList[nearestpos].label.getName());
         }
         public void DisplayNearPos(int currentpos)
         {
@@ -337,8 +325,7 @@ namespace baithi
                 }
             }
         }
-
-        public int desNumber(string pos)
+        public int DesNumber(string pos)
         {
             switch (pos.ToLower())
             {
@@ -353,8 +340,7 @@ namespace baithi
                 default: return -1;
             }
         }
-
-        public string desName(string pos)
+        public string DesName(string pos)
         {
             switch (pos.ToLower())
             {
