@@ -34,12 +34,13 @@ namespace baithi
         public void AddEdge(int start, int end, int weight)     //Thêm cạnh
         {
             adjMat[start, end] = weight;
+            adjMat[end, start] = weight;
         }
         public int GetMin()    // Tìm vị trí gần với đỉnh cha nhất
         {
             int minDist = infinity;
             int indexMin = 0;
-            for (int j = 1; j <= nVerts - 1; j++)
+            for (int j = 0; j <= nVerts - 1; j++)
                 if (!(vertexList[j].isInTree) && sPath[j].distance < minDist)
                 {
                     minDist = sPath[j].distance; indexMin = j;
@@ -64,9 +65,11 @@ namespace baithi
                     column++;
                 }
         }
-        public void Path()
+        public void Path(string startPos, string endPos)
         {
-            int startTree = 0;
+            int start = desNumber(startPos);
+            int end = desNumber(endPos);
+            int startTree = start;
             vertexList[startTree].isInTree = true;
             nTree = 1;
             // Lưu trọng số từ điểm bắt đầu tới tất cả vị trí
@@ -89,34 +92,37 @@ namespace baithi
             for (int j = 0; j <= nVerts - 1; j++)
                 vertexList[j].isInTree = false;
         }
-        public void DisplayMenu(int n)
+        public void DisplayMenu(string startPos, string endPos)
         {
         Begin:
             Console.Clear();
-            Path();
-            System.Console.WriteLine("Điểm xuất phát: " + vertexList[0].label.getName());
-            System.Console.WriteLine("Điểm đến: " + vertexList[n].label.getName());
+            int m = desNumber(startPos);
+            int n = desNumber(endPos);
+            Path(startPos, endPos);
+            System.Console.WriteLine("Điểm xuất phát: " + desName(startPos));
+            System.Console.WriteLine("Điểm đến: " + desName(endPos));
             System.Console.WriteLine("-----------Những thông tin hữu ích về lộ trình bạn cần biết-----------");
             System.Console.WriteLine("Quãng đường ngắn nhất: 1");
             System.Console.WriteLine("Tuyến đường ngắn nhất: 2");
             System.Console.WriteLine("Hiển thị giá tiền theo phương tiện/hãng xe: 3");
 
         Error1:
+
             System.Console.Write("Nhập lựa chọn của bạn: ");
             int choose = int.Parse(Console.ReadLine());
             switch (choose)
             {
                 case 1:
                     System.Console.WriteLine("------------------------------------");
-                    System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}km", vertexList[0].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
+                    System.Console.WriteLine("Quãng đường ngắn nhất từ {0} đến {1} là: {2}km", vertexList[m].label.getName(), vertexList[n].label.getName(), sPath[n].distance);
                     break;
 
                 case 2:
                     System.Console.WriteLine("------------------------------------");
                     System.Console.WriteLine("Tuyến đường ngắn nhất phải đi là: ");
-                    PrintPath(0, n, sPath);
+                    PrintPath(m, n, sPath);
                     Console.WriteLine();
-                    break;             
+                    break;
 
                 case 3:
                     Console.Clear();
@@ -126,7 +132,7 @@ namespace baithi
                 default:
                     System.Console.WriteLine("Yêu cầu bạn nhập không đúng vui lòng nhập lại! (1 - 5)");
                     goto Error1;
-            }           
+            }
         Error2:
             System.Console.Write("Để xem thêm thông tin về lộ trình ấn phím 1, để tiếp tục ấn phím 2: ");
             int exit = Int32.Parse(Console.ReadLine());
@@ -153,7 +159,7 @@ namespace baithi
                 {
                     clone.Dequeue();
                 }
-                System.Console.WriteLine("{0}: {1}", clone.Dequeue().getName(), button);
+                System.Console.WriteLine("{0}: Phím {1}", clone.Dequeue().getName(), button);
                 button++;
             }
         }
@@ -190,7 +196,7 @@ namespace baithi
                     {
                         case 0:
                             System.Console.Write("Tài xế Grab gần bạn nhất là: ");
-                            System.Console.WriteLine(random1.Next(0,1)+","+random1.Next(1,9)+"km");
+                            System.Console.WriteLine(random1.Next(0, 1) + "," + random1.Next(1, 9) + "km");
                             float grabCarCost = sPath[n].distance * listCar[carChoose].getPrice();
                             double grabCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + grabCarCost + "đ");
@@ -198,7 +204,7 @@ namespace baithi
                             break;
                         case 1:
                             System.Console.Write("Tài xế Uber gần bạn nhất là: ");
-                            System.Console.WriteLine(random1.Next(0,1)+","+random1.Next(1,9)+"km");
+                            System.Console.WriteLine(random1.Next(0, 1) + "," + random1.Next(1, 9) + "km");
                             float uberCarCost = sPath[n].distance * listCar[carChoose].getPrice();
                             double uberCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + uberCarCost + "đ");
@@ -206,7 +212,7 @@ namespace baithi
                             break;
                         case 2:
                             System.Console.Write("Tài xế Mai Linh gần bạn nhất là: ");
-                            System.Console.WriteLine(random1.Next(0,1)+","+random1.Next(1,9)+"km");
+                            System.Console.WriteLine(random1.Next(0, 1) + "," + random1.Next(1, 9) + "km");
                             float maiLinhCarCost = sPath[n].distance * listCar[carChoose].getPrice();
                             double maiLinhCarTime = Math.Round((sPath[n].distance / listCar[carChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe hơi của hãng " + listCar[carChoose].getName() + " là: " + maiLinhCarCost + "đ");
@@ -240,7 +246,7 @@ namespace baithi
                     {
                         case 0:
                             System.Console.Write("Tài xế Grab gần bạn nhất cách: ");
-                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
+                            System.Console.WriteLine(0 + "," + random2.Next(1, 9) + "km");
                             float grabMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double grabMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + grabMotorbikeCost + "đ");
@@ -248,7 +254,7 @@ namespace baithi
                             break;
                         case 1:
                             System.Console.Write("Tài xế Uber gần bạn nhất cách: ");
-                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
+                            System.Console.WriteLine(0 + "," + random2.Next(1, 9) + "km");
                             float uberMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double uberMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + uberMotorbikeCost + "đ");
@@ -256,7 +262,7 @@ namespace baithi
                             break;
                         case 2:
                             System.Console.Write("Tài xế Be gần bạn nhất cách: ");
-                            System.Console.WriteLine(0+","+random2.Next(1,9)+"km");
+                            System.Console.WriteLine(0 + "," + random2.Next(1, 9) + "km");
                             float beMotorbikeCost = sPath[n].distance * listMotorbike[motorBikeChoose].getPrice();
                             double beMotorbikeTime = Math.Round((sPath[n].distance / listMotorbike[motorBikeChoose].getSpeed()) * 60);
                             System.Console.WriteLine("Tiền đi xe máy của hãng " + listMotorbike[motorBikeChoose].getName() + " là: " + beMotorbikeCost + "đ");
@@ -290,23 +296,35 @@ namespace baithi
         }
         public void DisplayNearestPos(int currentpos)
         {
-            int min = infinity;
-            int nearestpos = 0;
+            int min1 = infinity;
+            int min2 = infinity;
+            int nearestpos1 = 0;
+            int nearestpos2 = 0;
 
-            System.Console.WriteLine("Địa điểm gần {0} nhất là: ", vertexList[currentpos].label.getName());
             for (int i = 0; i < adjMat.GetLength(1); i++)
             {
-                if (adjMat[currentpos, i] == min && min != infinity)
+                if (adjMat[currentpos, i] < min1 && adjMat[currentpos, i] != 0)
                 {
-                    System.Console.WriteLine(vertexList[nearestpos].label.getName());
-                }
-                if (adjMat[currentpos, i] <= min && adjMat[currentpos, i] != 0)
-                {
-                    min = adjMat[currentpos, i];
-                    nearestpos = i;
+                    min1 = adjMat[currentpos, i];
+                    nearestpos1 = i;
                 }
             }
-            System.Console.WriteLine(vertexList[nearestpos].label.getName());
+            for (int i = adjMat.GetLength(1) - 1; i >= 0; i--)
+            {
+                if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
+                {
+                    min2 = adjMat[i, currentpos];
+                    nearestpos2 = i;
+                }
+            }
+            if (min1 - min2 == 0)
+            {
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}, {2}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName(), vertexList[nearestpos2].label.getName());
+            }
+            else
+            {
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
+            }
         }
         public void DisplayNearPos(int currentpos)
         {
@@ -315,8 +333,40 @@ namespace baithi
             {
                 if (adjMat[currentpos, i] != 0 && adjMat[currentpos, i] < infinity)
                 {
-                    Console.WriteLine(vertexList[i].label.getName()) ;
+                    Console.WriteLine(vertexList[i].label.getName());
                 }
+            }
+        }
+
+        public int desNumber(string pos)
+        {
+            switch (pos.ToLower())
+            {
+                case "bệnh viện đại học y dược": return 0;
+                case "trường đại học kinh tế tp.hcm": return 1;
+                case "chợ bến thành": return 2;
+                case "bệnh viện hùng vương": return 3;
+                case "trường thpt mạc đĩnh chi": return 4;
+                case "trung tâm mua sắm aeon mall bình tân": return 5;
+                case "đại học khoa học tự nhiên": return 6;
+                case "đài truyền hình htv": return 7;
+                default: return -1;
+            }
+        }
+
+        public string desName(string pos)
+        {
+            switch (pos.ToLower())
+            {
+                case "bệnh viện đại học y dược": return "Bệnh viện đại học Y Dược";
+                case "trường đại học kinh tế tp.hcm": return " Trường Đại học kinh tế TP.HCM";
+                case "chợ bến thành": return "Chợ Bến Thành";
+                case "bệnh viện hùng vương": return "Bệnh viện Hùng Vương";
+                case "trường thpt mạc đĩnh chi": return "Trường THPT Mạc Đĩnh Chi";
+                case "trung tâm mua sắm aeon mall bình tân": return "Trung tâm mua sắm AEON Mall Bình Tân";
+                case "đại học khoa học tự nhiên": return "Đại học Khoa học tự nhiên TPHCM";
+                case "đài truyền hình htv": return "Đài truyền hình HTV";
+                default: return "";
             }
         }
     }
