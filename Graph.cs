@@ -303,7 +303,7 @@ namespace baithi
                     nearestpos1 = i;
                 }
             }
-            for (int i = 0; i < adjMat.GetLength(0); i++)
+            for (int i = adjMat.GetLength(1) - 1; i >= 0; i--)
             {
                 if (adjMat[i, currentpos] < min2 && adjMat[i, currentpos] != 0)
                 {
@@ -311,13 +311,13 @@ namespace baithi
                     nearestpos2 = i;
                 }
             }
-            if (min1 < min2)
+            if (min1 - min2 == 0)
             {
-                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}, {2}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName(), vertexList[nearestpos2].label.getName());
             }
             else
             {
-                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos2].label.getName());
+                System.Console.WriteLine("Địa điểm gần {0} nhất là: {1}", vertexList[currentpos].label.getName(), vertexList[nearestpos1].label.getName());
             }
         }
         public void DisplayNearPos(int currentpos)
